@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="image/image2.png">
+    <title>Raskbind Coffee</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS File Link  -->
+    <link rel="stylesheet" href="css/style.css">
+  <title>Raskbind Coffee</title>
+  <style>
+    /* Container styles */
+    .card-container {
+      perspective: 1000px;
+      width: 300px;
+      height: 400px;
+      margin: 50px auto;
+    }
+
+    /* Card styles */
+    .card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: rotateCard 4s infinite;
+    }
+
+    @keyframes rotateCard {
+      0% {
+        transform: rotateY(0deg);
+      }
+      50% {
+        transform: rotateY(180deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+    }
+
+    .card-front {
+      background-color: #ffd700; /* Front face background color */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-back {
+      background-color: #ffd700; /* Back face background color */
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start; /* Align items on the left side */
+      padding: 20px;
+      text-align: left; /* Adjust text alignment as needed */
+    }
+
+    .brand-logo {
+      width: 100px; /* Adjust the logo size as needed */
+    }
+
+    .qr-scanner {
+      width: 150px; /* Adjust the QR scanner size as needed */
+    }
+
+    .columns {
+      display: flex;
+      flex-direction: column; /* Updated to column */
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .column {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+    <section class="home" id="home">
+        <div class="card-container">
+            <div class="card">
+              <div class="card-front">
+                <img src="image/card logo.png" alt="Brand Logo" class="brand-logo">
+                <h2>Raskbind Coffee
+                    <br>
+                    Loyalty Card
+                </h2>
+                <p>Every purchasing 5% off for card holders</p>
+                <img src="image/QR.png" alt="QR Scanner" class="qr-scanner">
+              </div>
+              <div class="card-back">
+                <div class="columns">
+                  <div class="column">
+                    <h2>Name:- Rahul Sharma</h2>
+                  </div>
+                  <div class="column">
+                    <h2>ID Number:- XXXXXXXXXX</h2>
+                  </div>
+                </div>
+                <ul style="padding-left: 20px;">
+                    <h2>Terms & Conditions</h2>
+                  <li>This loyalty card is non-transferable</li>
+                  <li>Card must be presented at time of purchase to receive points</li>
+                  <li>Loyalty cards are valid only until expiry date stated above</li>
+                </ul>
+                <p style="text-align: center; margin: 0 auto;">
+                    raskbind@gmail.com
+                    <br>
+                    raskbindcoffee.shop
+                </p>                
+              </div>
+            </div>
+          </div>
+        <a href="getcard.html" class="btn">Get Card</a>
+        <br>
+      
+    </section>
+
+    <section class="about" id="about">
+      <div class="row" style="text-align: left;">
+  
+          <div class="content">
+           <div class="page"> 
+              <h3 class="title">Loyalty Card Rules:</h3>
+              <br>
+              <br>
+              <h2>1. Every purchase gives you a 5% discount.</h2>
+              <br>
+              <h2>2. To get a loyalty card, you need to deposit 2,000 rupees.</h2>
+              <br>
+              <h2>3. The 200 rupees deposited will be saved on your card and can be used for future purchases.</h2>
+              <br>
+              <h2>4. This loyalty card is specifically designed for saving money on coffee purchases.</h2>
+              <br>
+              <p>By following these rules, every time you make a purchase using your loyalty card, you will receive a 5% discount, and you can accumulate savings on your card by depositing 2,000 rupees initially. These savings can then be used towards your future coffee purchases.</p>
+              <br>
+              <br>
+           </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>our branches</h3>
+            <a href="#"><i class="fas fa-arrow-right"></i> Bengaluru</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> Delhi</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> Hyderabad</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> Mumbai</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> Kolkata</a>
+        </div>
+
+        <div class="box">
+            <h3>Quick links</h3>
+            <a href="privacypolicy.html" target="_blank"><i class="fas fa-arrow-right"></i> Privacy Policy</a>
+            <a href="faq.html" target="_blank"><i class="fas fa-arrow-right"></i> FAQs</a>
+            <a href="termas&cond.html" target="_blank"><i class="fas fa-arrow-right"></i> Terms and Conditions</a>
+            <a href="Raskbind India Mobile App Terms of Use.html" target="_blank"><i class="fas fa-arrow-right"></i> Raskbind India Mobile App Terms of Use</a>
+            <a href="Customer Service.html" target="_blank"><i class="fas fa-arrow-right"></i> Customer Service</a>
+            <a href="Raskbind Rewards Day Offer.html" target="_blank"><i class="fas fa-arrow-right"></i> Raskbind Rewards Day Offer</a>
+            <a href="Delivery.html" target="_blank"><i class="fas fa-arrow-right"></i> Delivery</a>
+            <a href="Season's Gifting.html" target="_blank"><i class="fas fa-arrow-right"></i> Season's Gifting</a>
+            <a href="Offer for Beverage Subscription at Raskbind.html" target="_blank"><i class="fas fa-arrow-right"></i> Offer for Beverage Subscription at Raskbind.</a>
+            <a href="Beverage Subscription.html" target="_blank"><i class="fas fa-arrow-right"></i> Beverage Subscription</a>
+        </div>
+
+        <div class="box">
+            <h3>Responsibility</h3>
+            <a href="Feedback.html" target="_blank"><i class="fas fa-arrow-right"></i> Feedback</a>
+            <a href="Diversity.html" target="_blank"><i class="fas fa-arrow-right"></i> Diversity</a>
+            <a href="Community.html" target="_blank"><i class="fas fa-arrow-right"></i> Community</a>
+            <a href="Ethical Sourcing.html" target="_blank"><i class="fas fa-arrow-right"></i> Ethical Sourcing</a>
+            <a href="Environmental Stewardship.html" target="_blank"><i class="fas fa-arrow-right"></i> Environmental Stewardship</a>
+            <a href="Learn More.html" target="_blank"><i class="fas fa-arrow-right"></i> Learn More</a>
+        </div>
+
+        <div class="box">
+            <h3>Social Media</h3>
+            <a href="https://www.facebook.com/profile.php?id=61554957481628" target="_blank"><i class="fab fa-facebook-f"></i> facebook</a>
+            <a href="https://twitter.com/raskbind" target="_blank"><i class="fab fa-twitter"></i> twitter</a>
+            <a href="https://www.instagram.com/raskbind/" target="_blank"><i class="fab fa-instagram"></i> instagram</a>
+            <a href="https://www.linkedin.com/company/raskbind-coffee/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i> linkedin</a>
+            <a href="https://www.instagram.com/raskbindcoffee.shop/" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="https://wa.me/+917549113544"><i class="fas fa-phone"></i> +91 75491-13544</a>
+            <a href="https://wa.me/+918102040423"><i class="fas fa-phone"></i> +91 81020-40423</a>
+            <a href="mailto:raskbind@gmail.com"><i class="fas fa-envelope"></i> raskbind@gmail.com</a>
+            <a href="#"><i class="fas fa-map"></i> Ashok Nagar, Bengaluru</a>
+            <a href="#"><i class="fas fa-map"></i> Bandra West, Mumbai</a>
+        </div>
+    </div>
+    
+    <div class="credit">created by <span>mr. Rahul Sharma</span> | all rights reserved</div>
+</section>
+</body>
+</html>
