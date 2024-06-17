@@ -20,8 +20,10 @@
     /* Container styles */
     .card-container {
       perspective: 1000px;
-      width: 300px;
-      height: 400px;
+      width: 90vw; /* Use viewport width for responsiveness */
+      max-width: 420px; /* Maximum width for larger screens */
+      height: 56.25vw; /* Maintain a 16:9 aspect ratio */
+      max-height: 250px; /* Maximum height for larger screens */
       margin: 50px auto;
     }
 
@@ -53,97 +55,36 @@
       height: 100%;
       backface-visibility: hidden;
       border-radius: 10px;
+      background-size: cover;
     }
 
     .card-front {
-      background-color: #EBC385; /* Front face background color */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      text-align: center;
+      background-image: url('image/1-modified.png'); /* Update with your front image path */
     }
 
     .card-back {
-      background-color: #EBC385; /* Back face background color */
+      background-image: url('image/2-modified.png'); /* Update with your back image path */
       transform: rotateY(180deg);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: flex-start; /* Align items on the left side */
-      padding: 20px;
-      text-align: left; /* Adjust text alignment as needed */
-    }
-
-    .brand-logo {
-      width: 100px; /* Adjust the logo size as needed */
-    }
-
-    .qr-scanner {
-      width: 150px; /* Adjust the QR scanner size as needed */
-    }
-
-    .columns {
-      display: flex;
-      flex-direction: column; /* Updated to column */
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    .column {
-      flex: 1;
     }
   </style>
 </head>
 <body>
 
-    <section class="home" id="home">
-        <div class="card-container">
-            <div class="card">
-              <div class="card-front">
-                <img src="image/card logo.png" alt="Brand Logo" class="brand-logo">
-                <h2>Raskbind Coffee
-                    <br>
-                    Loyalty Card
-                </h2>
-                <p>Every purchasing 5% off for card holders</p>
-                <img src="image/QR.png" alt="QR Scanner" class="qr-scanner">
-              </div>
-              <div class="card-back">
-                <div class="columns">
-                  <div class="column">
-                    <h2>Name:- Rahul Sharma</h2>
-                  </div>
-                  <div class="column">
-                    <h2>ID Number:- XXXXXXXXXX</h2>
-                  </div>
-                </div>
-                <ul style="padding-left: 20px;">
-                    <h2>Terms & Conditions</h2>
-                  <li>This loyalty card is non-transferable</li>
-                  <li>Card must be presented at time of purchase to receive points</li>
-                  <li>Loyalty cards are valid only until expiry date stated above</li>
-                </ul>
-                <p style="text-align: center; margin: 0 auto;">
-                    raskbind@gmail.com
-                    <br>
-                    raskbindcoffee.shop
-                </p>                
-              </div>
-            </div>
-          </div>
-        <a href="getcard.html" class="btn">Get Card</a>
-        <br>
-      
-    </section>
+  <section class="home" id="home">
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front"></div>
+        <div class="card-back"></div>
+      </div>
+    </div>
+  </section>
 
     <section class="about" id="about">
       <div class="row" style="text-align: left;">
   
           <div class="content">
            <div class="page"> 
-              <h3 class="title">Loyalty Card Rules:</h3>
+              <h3 class="title">Gold Loyalty Card Rules:</h3>
               <br>
               <br>
               <h2>1. Every purchase gives you a 5% discount.</h2>
