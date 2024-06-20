@@ -80,11 +80,90 @@
   </section>
 
     <section class="about" id="about">
-      <div class="button-container" style="display: flex; justify-content: center; gap: 30px;">
-        <a href="steel.html" class="btn">Steel</a>
-        <a href="copper.html" class="btn">Copper</a>
-        <a href="gold.html" class="btn">Gold</a>
-      </div>
+      <style>
+    
+        .dropdown {
+          position: relative;
+          width: 100%;
+          border-bottom: 1px solid #ccc;
+        }
+    
+        .dropdown-toggle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px;
+          font-size: 16px;
+          cursor: pointer;
+          background-color: #ffffff;
+        }
+    
+        .dropdown-toggle::after {
+          content: '▼';
+          margin-left: 8px;
+        }
+    
+        .dropdown-content {
+          display: none;
+          flex-direction: column;
+          background-color: #ffffff;
+          
+          z-index: 1;
+        }
+    
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          border-top: 1px solid #ccc;
+        }
+    
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+        }
+    
+        /* Responsive media query */
+        @media (max-width: 768px) {
+          .dropdown-content {
+            width: 100%;
+            position: relative;
+            box-shadow: none;
+          }
+        }
+    
+        .dropdown.show .dropdown-content {
+          display: flex;
+        }
+      </style>
+
+      <div class="dropdown">
+    <div class="dropdown-toggle" style="font-weight: 1000; font-size: 20px; color: #444433;">Select Card type</div>
+    <div class="dropdown-content">
+      <h1><a href="steel.html">Steel Tier</a></h1>
+      <h1><a href="copper.html">Copper Tier</a></h1>
+      <h1><a href="gold.html">Gold Tier</a></h1>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.dropdown-toggle').addEventListener('click', function() {
+      var dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('show');
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-toggle')) {
+        var dropdowns = document.getElementsByClassName("dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
       <br>
       <br>
       <br>
