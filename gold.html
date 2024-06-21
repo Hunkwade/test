@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="image/image2.png">
+    <title>Raskbind Coffee</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS File Link  -->
+    <link rel="stylesheet" href="css/style.css">
+  <title>Raskbind Coffee</title>
+  <style>
+    /* Container styles */
+    .card-container {
+      perspective: 1000px;
+      width: 94vw; /* Use viewport width for responsiveness */
+      max-width: 420px; /* Maximum width for larger screens */
+      height: 56.25vw; /* Maintain a 16:9 aspect ratio */
+      max-height: 250px; /* Maximum height for larger screens */
+      margin: 50px auto;
+    }
+
+    /* Card styles */
+    .card {
+      position: relative;
+      width: 96%;
+      height: 105%;
+      transform-style: preserve-3d;
+      animation: rotateCard 4s infinite;
+    }
+
+    @keyframes rotateCard {
+      0% {
+        transform: rotateY(0deg);
+      }
+      50% {
+        transform: rotateY(180deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      background-size: cover;
+    }
+
+    .card-front {
+      background-image: url('image/1-gold.png'); /* Update with your front image path */
+    }
+
+    .card-back {
+      background-image: url('image/2-gold.png'); /* Update with your back image path */
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="" id="home">
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front"></div>
+        <div class="card-back"></div>
+      </div>
+    </div>
+  </section>
+
+    <section class="about" id="about">
+      <style>
+    
+        .dropdown {
+          position: relative;
+          width: 100%;
+          border-bottom: 1px solid #ccc;
+        }
+    
+        .dropdown-toggle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px;
+          font-size: 16px;
+          cursor: pointer;
+          background-color: #ffffff;
+        }
+    
+        .dropdown-toggle::after {
+          content: '▼';
+          margin-left: 8px;
+        }
+    
+        .dropdown-content {
+          display: none;
+          flex-direction: column;
+          background-color: #ffffff;
+          
+          z-index: 1;
+        }
+    
+        .dropdown-content a {
+          color: black;
+          padding: 22px 26px;
+          text-decoration: none;
+          display: block;
+          border-top: 1px solid #ccc;
+        }
+    
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+        }
+    
+        /* Responsive media query */
+        @media (max-width: 768px) {
+          .dropdown-content {
+            width: 100%;
+            position: relative;
+            box-shadow: none;
+          }
+        }
+    
+        .dropdown.show .dropdown-content {
+          display: flex;
+        }
+      </style>
+
+      <div class="dropdown">
+    <div class="dropdown-toggle" style="font-weight: 1000; font-size: 20px; color: #444433;">Select Card type</div>
+    <div class="dropdown-content">
+      <h1><a href="steel.html">Steel Tier</a></h1>
+      <h1><a href="copper.html">Copper Tier</a></h1>
+      <h1><a href="gold.html">Gold Tier</a></h1>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.dropdown-toggle').addEventListener('click', function() {
+      var dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('show');
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-toggle')) {
+        var dropdowns = document.getElementsByClassName("dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+      <br>
+      <br>
+      <br>
+      <div class="row" style="text-align: left;">
+  
+          <div class="content">
+           <div class="page"> 
+              <h3 class="title">Gold Card</h3>
+              <br>
+              <br>
+              <p>Earn 25 stars in 12 months—that’s 20 additional stars after initially qualifying for the Brown level—to step up to the Gold level, the pinnacle of rewards!</p>
+              <br>
+              <br>
+              <div class="container">
+                <a href="box1-link" class="box">
+                    <p class="text"><h1 style="color: #444433;">Free Birthday Beverage</h1><h3 style="color: #444433;">Unlock free birthday beverage when you annually spend Rs 1,000 or more.</h3></p>
+                </a>
+                
+                <a href="box2-link" class="box">
+                    <p class="text"><h1 style="color: #444433;">Free Size Upgrade</h1><h3 style="color: #444433;">A free size upgrade on any handcrafted beverage of your choice</h3></p>
+                </a>
+
+                <a href="box2-link" class="box">
+                    <p class="text"><h1 style="color: #444433;">Two Free Customisations</h1><h3 style="color: #444433;">Two free customisations on any handcrafted beverage</h3></p>
+                </a>
+
+                <a href="box2-link" class="box">
+                    <p class="text"><h1 style="color: #444433;">Free Tall Size Drink</h1><h3 style="color: #444433;">A free tall size drink after every 10 additional stars earned</h3></p>
+                </a>
+
+                <a href="box2-link" class="box">
+                    <p class="text"><h1 style="color: #444433;">Free Tall Beverage</h1><h3 style="color: #444433;">A free tall beverage on purchase of 250g Whole Bean coffee</h3></p>
+                </a>
+
+                <a href="box2-link" class="box">
+                    <p class="text"><h1 style="color: #444433;">Personalised eGold Card</h1><h3 style="color: #444433;">AEarn a Digital Gold card as you reach Gold Tier</h3></p>
+                </a>
+
+            </div>
+            <br>
+
+
+            <div class="button-container" style="display: flex; justify-content: center;">
+                <a href="getcard.html" class="btn">Join the Raskbind family today</a>
+            </div>
+            <style>
+                /* CSS styles */
+                .container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                }
+        
+                .box {
+                    width: 45%;
+                    padding: 0; /* Changed padding to 0 */
+                    margin: 10px;
+                    background-color: #EFC652;
+                    border: 1px solid #ccc;
+                    border-radius: 10px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    overflow: hidden; /* Added overflow to hide image overflow */
+                }
+        
+                .text {
+                    padding: 20px; /* Added padding to text for spacing */
+                    font-size: 18px;
+                }
+        
+                .box-image {
+                    width: 100%;
+                    height: auto;
+                    max-height: 400px;
+                    display: block; /* Added display block for image */
+                }
+        
+                @media (max-width: 600px) {
+                    .box {
+                        width: 90%;
+                    }
+                    .text {
+                        font-size: 16px;
+                    }
+                }
+            </style>
+              <br>
+              <br>
+           </div>
+          </div>
+      </div>
+  </section>
+
+  
+</body>
+</html>
