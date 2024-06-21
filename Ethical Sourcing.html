@@ -26,9 +26,74 @@
             <div class="content">
              <div class="page"> 
                 <h3 class="title">Ethical Soucing</h3>
+                <h1>We've always believed in buying and serving the best coffee possible.</h1>
+                <br>
+                <br>
+                <p>At Raskbind, we are committed to sourcing the highest quality products while adhering to ethical and sustainable practices. Our goal is to ensure that everything we source is produced under the best standards, utilizing fair trade and responsible methods. We believe this results in superior products that also contribute to a better future for workers and a healthier planet.</p>
 
-            
+                <br>
+                <br>
+
+                <div class="container">
+                    <a href="box1-link" class="box">
+                        <img src="https://perfectdailygrind.com/wp-content/uploads/2022/09/CATA-ACCKWK-1024x640.jpg" alt="Image" class="box-image">
+                        <p class="text"><h1 style="color: #444433;">Coffee Sourcing</h1><h3></h3></p>
+                    </a>
+                    
+                    <a href="box2-link" class="box">
+                        <img src="https://www.globalcoffeeplatform.org/wp-content/uploads/2021/12/676A3826-scaled.jpg" alt="Image" class="box-image">
+                        <p class="text"><h1 style="color: #444433;">Framer Support</h1><h3></h3></p>
+                    </a>
+                </div>
+                <style>
+                    /* CSS styles */
+                    .container {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                    }
                 
+                    .box {
+                        width: 45%;
+                        height: 300px; /* Set a fixed height for the box */
+                        padding: 0; /* Changed padding to 0 */
+                        margin: 10px;
+                        background-color: #f2f2f2;
+                        border: 1px solid #ccc;
+                        border-radius: 10px;
+                        text-align: center;
+                        box-sizing: border-box;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        overflow: hidden; /* Added overflow to hide image overflow */
+                    }
+                
+                    .text {
+                        padding: 20px; /* Added padding to text for spacing */
+                        font-size: 18px;
+                    }
+                
+                    .box-image {
+                        width: 100%;
+                        height: calc(100% - 60px); /* Ensure image height fits within the box height minus the text height */
+                        display: block; /* Added display block for image */
+                        object-fit: cover; /* Ensure image covers the space without distortion */
+                    }
+                
+                    @media (max-width: 600px) {
+                        .box {
+                            width: 90%;
+                            height: 200px; /* Adjust height for smaller screens */
+                        }
+                        .text {
+                            font-size: 16px;
+                            padding: 10px; /* Adjust padding for smaller screens */
+                        }
+                        .box-image {
+                            height: calc(100% - 50px); /* Adjust image height for smaller screens */
+                        }
+                    }
+                </style>
+
 
             </div>
         </div>
