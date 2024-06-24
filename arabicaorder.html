@@ -28,13 +28,13 @@
             <input name="Email" type="email" placeholder="Email" class="box">
             <input name="Phone number" type="number" placeholder="Number" class="box">
             <input name="Address" type="text" placeholder="Full Address" class="box">
-            <input name="Price" type="text" placeholder="Price" value="1,249.00" class="box" id="price">
             <select name="Quantity" class="box" id="quantity">
-                <option value="" disabled selected>Quantity</option>
-                <option value="250g">250g</option>
-                <option value="500g">500g</option>
-                <option value="1kg">1kg</option>
-            </select>
+              <option value="" disabled selected>Quantity</option>
+              <option value="250g">250g</option>
+              <option value="500g">500g</option>
+              <option value="1kg">1kg</option>
+          </select>
+            <input name="Price" type="text" placeholder="Price" value="₹1,249.00" class="box" id="price">
             <input name="Product name" type="text" placeholder="Product name" value="Arabica" class="box">
             <div class="date">
                 <input type="text" name="DateTime" placeholder="Date and Time" class="box" id="datetime" style="display: none;" readonly>
@@ -69,16 +69,16 @@
                     var price;
                     switch (quantity) {
                         case '250g':
-                            price = '500.00';
+                            price = '₹1,249.00';
                             break;
                         case '500g':
-                            price = '750.00';
+                            price = '₹2,498.00';
                             break;
                         case '1kg':
-                            price = '1,249.00';
+                            price = '₹4,996.00';
                             break;
                         default:
-                            price = '0.00';
+                            price = '₹1,249.00';
                     }
                     priceInput.value = price;
                 });

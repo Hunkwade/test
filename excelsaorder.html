@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="image/image2.png">
+    <title>Raskbind Coffee</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS File Link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <section class="book" id="book">
+        <h1 class="heading">Raskbind <span>order page</span></h1>
+
+        <form name="submit-to-google-sheet" action="">
+            <input name="Name" type="text" placeholder="Name" class="box">
+            <input name="Email" type="email" placeholder="Email" class="box">
+            <input name="Phone number" type="number" placeholder="Number" class="box">
+            <input name="Address" type="text" placeholder="Full Address" class="box">
+            <select name="Quantity" class="box" id="quantity">
+              <option value="" disabled selected>Quantity</option>
+              <option value="250g">250g</option>
+              <option value="500g">500g</option>
+              <option value="1kg">1kg</option>
+          </select>
+            <input name="Price" type="text" placeholder="Price" value="₹1,049.00" class="box" id="price">
+            <input name="Product name" type="text" placeholder="Product name" value="Excelsa" class="box">
+            <div class="date">
+                <input type="text" name="DateTime" placeholder="Date and Time" class="box" id="datetime" style="display: none;" readonly>
+            </div>
+            <input type="submit" value="Book Order" class="btn">
+        </form>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var dateTimeInput = document.getElementById('datetime-local');
+                var displayDateTime = document.getElementById('datetime');
+                
+                // Set the current date and time
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = ('0' + (now.getMonth() + 1)).slice(-2);
+                var day = ('0' + now.getDate()).slice(-2);
+                var hour = ('0' + now.getHours()).slice(-2);
+                var minute = ('0' + now.getMinutes()).slice(-2);
+                
+                var formattedDateTime = year + '-' + month + '-' + day + 'T' + hour + ':' + minute;
+                if (dateTimeInput) {
+                    dateTimeInput.value = formattedDateTime;
+                }
+                displayDateTime.value = formattedDateTime.replace('T', ' ');
+        
+                var quantitySelect = document.getElementById('quantity');
+                var priceInput = document.getElementById('price');
+        
+                quantitySelect.addEventListener('change', function() {
+                    var quantity = quantitySelect.value;
+                    var price;
+                    switch (quantity) {
+                        case '250g':
+                            price = '₹1,049.00';
+                            break;
+                        case '500g':
+                            price = '₹2,098.00';
+                            break;
+                        case '1kg':
+                            price = '₹4,196.00';
+                            break;
+                        default:
+                            price = '₹1,049.00';
+                    }
+                    priceInput.value = price;
+                });
+            });
+        </script>
+    </section>
+
+
+
+    
+
+    <div class="loading-spinner"></div>
+      
+      <style>
+        .loading-spinner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-top-color: #0073b1;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.loading-spinner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-top-color: #0073b1;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+      </style>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxef7kK1VwXzzzAJ8rOVBfBaPTI4IvlBURzWUq8mIkddb4vdq6LsghWLVlFFjD9NYh-/exec'
+ 
+const form = document.forms['submit-to-google-sheet'];
+const spinner = document.querySelector('.loading-spinner');
+
+form.addEventListener('submit', e => {
+e.preventDefault();
+form.classList.add('loading');
+spinner.style.display = 'block';
+fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+.then(response => {
+  if (response.ok) {
+    window.location.href = "submit.html";
+  }
+})
+.catch(error => {
+  alert("Submission failed. Please try again later.");
+  console.error('Error:', error);
+})
+.finally(() => {
+  form.classList.remove('loading');
+  spinner.style.display = 'none';
+});
+})
+
+  </script>
+
+</body>
+</html>
