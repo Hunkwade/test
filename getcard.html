@@ -21,15 +21,39 @@
 <body>
 
     <section class="book" id="book">
-        <h1 class="heading">Loyalty Card<span>Get Card</span></h1>
+        <h1 class="heading">Loyalty<span> Card</span></h1>
 
         <form name="submit-to-google-sheet" action="">
-            <input name="Name" type="text" placeholder="Name" class="box">
-            <input name="Email" type="email" placeholder="Email" class="box">
-            <input name="Phone number" type="number" placeholder="Number" class="box">
-            <input name="Occupation" type="text" placeholder="Occupation" class="box">
-            <input type="submit" value="Request" class="btn">
-        </form>
+          <input name="Name" type="text" placeholder="Name" class="box">
+          <input name="Email" type="email" placeholder="Email" class="box">
+          <input name="Occupation" type="text" placeholder="Occupation" class="box">
+          <select name="Card Tier" class="box" id="card-tier">
+              <option value="" disabled selected>Select Card</option>
+              <option value="Steel Tier">Steel Tier</option>
+              <option value="Copper Tier">Copper Tier</option>
+              <option value="Gold Tier">Gold Tier</option>
+          </select>
+          <input type="text" name="DateTime" placeholder="Date and Time" class="box" id="datetime" style="display: none;" readonly>
+          <input type="submit" value="Request" class="btn">
+      </form>
+      
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              var displayDateTime = document.getElementById('datetime');
+      
+              // Set the current date and time
+              var now = new Date();
+              var year = now.getFullYear();
+              var month = ('0' + (now.getMonth() + 1)).slice(-2);
+              var day = ('0' + now.getDate()).slice(-2);
+              var hour = ('0' + now.getHours()).slice(-2);
+              var minute = ('0' + now.getMinutes()).slice(-2);
+      
+              var formattedDateTime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+              displayDateTime.value = formattedDateTime;
+          });
+      </script>
+      
     </section>
 
     <div class="loading-spinner"></div>
@@ -78,49 +102,10 @@
 
       </style>
 
-<section class="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>our branches</h3>
-            <a href="#"><i class="fas fa-arrow-right"></i> india</a>
-            <a href="#"><i class="fas fa-arrow-right"></i> USA</a>
-            <a href="#"><i class="fas fa-arrow-right"></i> france</a>
-            <a href="#"><i class="fas fa-arrow-right"></i> africa</a>
-            <a href="#"><i class="fas fa-arrow-right"></i> japan</a>
-        </div>
 
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#home"><i class="fas fa-arrow-right"></i> home</a>
-            <a href="#about"><i class="fas fa-arrow-right"></i> about</a>
-            <a href="#menu"><i class="fas fa-arrow-right"></i> menu</a>
-            <a href="#review"><i class="fas fa-arrow-right"></i> review</a>
-            <a href="#book"><i class="fas fa-arrow-right"></i> book</a>
-        </div>
-
-        <div class="box">
-            <h3>contact info</h3>
-            <a href="https://wa.me/+917549113544"><i class="fas fa-phone"></i> +91 75491-13544</a>
-            <a href="https://wa.me/+918102040423"><i class="fas fa-phone"></i> +91 81020-40423</a>
-            <a href="mailto:raskbind@gmail.com"><i class="fas fa-envelope"></i> raskbind@gmail.com</a>
-            <a href="#"><i class="fas fa-map"></i> Bettiah, Bihar</a>
-        </div>
-
-        <div class="box">
-            <h3>contact info</h3>
-            <a href="https://www.facebook.com/profile.php?id=100065601871236"><i class="fab fa-facebook-f"></i> facebook</a>
-            <a href="https://twitter.com/raskbind"><i class="fab fa-twitter"></i> twitter</a>
-            <a href="https://www.instagram.com/raskbind/"><i class="fab fa-instagram"></i> instagram</a>
-            <a href="https://www.linkedin.com/in/rahul-sharma-19336b24a/"><i class="fab fa-linkedin"></i> linkedin</a>
-            <a href="https://www.youtube.com/@Raskbind"><i class="fab fa-youtube"></i> Youtube</a>
-        </div>
-    </div>
-
-    <div class="credit">created by <span>mr. Rahul Sharma</span> | all rights reserved</div>
-</section>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwJAg_7weP0ntbiOQpQVqmgQLKIRuzuVA8UEGMEK5_nJ7TodFLMreBE4CgaHW5dAKiqNQ/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwap8SNdEnWloa6K12Qj-a8y1G6C-f1aFJ5k5xQYPvMNAxBOeyXow4tknOOYaR9KLilzg/exec'
  
 const form = document.forms['submit-to-google-sheet'];
 const spinner = document.querySelector('.loading-spinner');

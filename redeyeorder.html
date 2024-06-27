@@ -23,18 +23,76 @@
     <section class="book" id="book">
       <h1 class="heading">Raskbind <span>order page</span></h1>
 
-        <form name="submit-to-google-sheet" action="">
-            <input name="Name" type="text" placeholder="Name" class="box">
-            <input name="Email" type="email" placeholder="Email" class="box">
-            <input name="Phone number" type="number" placeholder="Number" class="box">
-            <input name="Occupation" type="text" placeholder="Occupation" class="box">
-            <input name="Address" type="text" placeholder="Address" class="box">
-            <input name="Price" type="text" placeholder="Price" value="229" class="box1">
-            <input name="Quantity" type="number" placeholder="Quantity" class="box">
-            <input name="Product name" type="text" placeholder="Product name" value="Red Eye" class="box">
-            <textarea name="Message" placeholder="Message" class="box" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="Book Order" class="btn">
-        </form>
+      <form name="submit-to-google-sheet" action="">
+        <input name="Name" type="text" placeholder="Name" class="box">
+        <input name="Email" type="email" placeholder="Email" class="box">
+        <input name="Phone number" type="number" placeholder="Number" class="box">
+        <input name="Address" type="text" placeholder="Address" class="box">
+        <input name="Quantity" type="number" placeholder="Quantity" class="box">
+        <select name="Size" class="box" id="size">
+          <option value="" disabled selected>Select Size</option>
+          <option value="Short">Short</option>
+          <option value="Tall">Tall</option>
+          <option value="Grande">Grande</option>
+          <option value="Venti">Venti</option>
+          <option value="Trenta">Trenta</option>
+        </select>
+        <input name="Price" type="text" placeholder="Price" value="₹299" class="box" id="price"> 
+        <input name="Product name" type="text" placeholder="Product name" value="Red Eye" class="box">
+        <textarea name="Message" placeholder="Message" class="box" cols="30" rows="10"></textarea>
+        <div class="date">
+            <input type="text" name="DateTime" placeholder="Date and Time" class="box" id="datetime" style="display: none;" readonly>
+        </div>
+        <input type="submit" value="Book Order" class="btn">
+    </form>
+    
+    <script>
+        // Function to get current date and time
+        function getCurrentDateTime() {
+            var now = new Date();
+            var date = now.toDateString();
+            var time = now.toLocaleTimeString();
+    
+            return date + ' ' + time;
+        }
+    
+        // Populate the "DateTime" field with the current date and time and show it
+        document.addEventListener('DOMContentLoaded', function() {
+            var datetimeField = document.getElementById('datetime');
+            if (datetimeField) {
+                datetimeField.value = getCurrentDateTime();
+                datetimeField.style.display = 'block';
+            }
+    
+            var sizeSelect = document.getElementById('size');
+            var priceInput = document.getElementById('price');
+    
+            sizeSelect.addEventListener('change', function() {
+                var size = sizeSelect.value;
+                var price;
+                switch (size) {
+                    case 'Short':
+                        price = '₹199.00';
+                        break;
+                    case 'Tall':
+                        price = '₹299.00';
+                        break;
+                    case 'Grande':
+                        price = '₹399.00';
+                        break;
+                    case 'Venti':
+                        price = '₹499.00';
+                        break;
+                    case 'Trenta':
+                        price = '₹599.00';
+                        break;
+                    default:
+                        price = '₹299.00';
+                }
+                priceInput.value = price;
+            });
+        });
+    </script>
     </section>
 
     <section class="footer">
