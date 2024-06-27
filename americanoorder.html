@@ -33,11 +33,11 @@
           <option value="" disabled selected>Select Size</option>
           <option value="Short">Short</option>
           <option value="Tall">Tall</option>
-          <option value="Grande">Grande</option>
-          <option value="Venti">Venti</option>
-          <option value="Trenta">Trenta</option>
+          <option value="Grande">Grande Iced Available</option>
+          <option value="Venti">Venti Not Available</option>
+          <option value="Trenta">Trenta Not Available</option>
         </select>
-        <input name="Price" type="text" placeholder="Price" value="₹299" class="box" id="price"> 
+        <input name="Price" type="text" placeholder="Price" value="₹249" class="box" id="price"> 
         <input name="Product name" type="text" placeholder="Product name" value="Americano" class="box">
         <textarea name="Message" placeholder="Message" class="box" cols="30" rows="10"></textarea>
         <div class="date">
@@ -75,19 +75,19 @@
                         price = '₹199.00';
                         break;
                     case 'Tall':
-                        price = '₹299.00';
+                        price = '₹249.00';
                         break;
                     case 'Grande':
-                        price = '₹399.00';
+                        price = '₹349.00';
                         break;
                     case 'Venti':
-                        price = '₹499.00';
+                        price = '₹489.00';
                         break;
                     case 'Trenta':
-                        price = '₹599.00';
+                        price = '₹549.00';
                         break;
                     default:
-                        price = '₹299.00';
+                        price = '₹249.00';
                 }
                 priceInput.value = price;
             });
@@ -150,7 +150,7 @@
   height: 50px;
   border-radius: 50%;
   border: 5px solid #ccc;
-  border-top-color: #0073b1;
+  border-top-color: #3d291d;
   animation: spin 1s ease-in-out infinite;
 }
 
@@ -166,7 +166,7 @@
   height: 30px;
   border-radius: 50%;
   border: 5px solid #ccc;
-  border-top-color: #0073b1;
+  border-top-color: #3d291d;
   animation: spin 1s ease-in-out infinite;
 }
 

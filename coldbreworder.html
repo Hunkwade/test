@@ -32,10 +32,10 @@
         <select name="Size" class="box" id="size">
           <option value="" disabled selected>Select Size</option>
           <option value="Short">Short</option>
-          <option value="Tall">Tall</option>
-          <option value="Grande">Grande</option>
-          <option value="Venti">Venti</option>
-          <option value="Trenta">Trenta</option>
+          <option value="Tall">Tall </option>
+          <option value="Grande">Grande Iced Available</option>
+          <option value="Venti">Venti Not Available</option>
+          <option value="Trenta">Trenta Not Available</option>
         </select>
         <input name="Price" type="text" placeholder="Price" value="₹299" class="box" id="price"> 
         <input name="Product name" type="text" placeholder="Product name" value="Cold Brew" class="box">
@@ -72,7 +72,7 @@
                 var price;
                 switch (size) {
                     case 'Short':
-                        price = '₹199.00';
+                        price = '₹249.00';
                         break;
                     case 'Tall':
                         price = '₹299.00';
@@ -150,7 +150,7 @@
   height: 50px;
   border-radius: 50%;
   border: 5px solid #ccc;
-  border-top-color: #0073b1;
+  border-top-color: #3d291d;
   animation: spin 1s ease-in-out infinite;
 }
 
@@ -166,7 +166,7 @@
   height: 30px;
   border-radius: 50%;
   border: 5px solid #ccc;
-  border-top-color: #0073b1;
+  border-top-color: #3d291d;
   animation: spin 1s ease-in-out infinite;
 }
 
