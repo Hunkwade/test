@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/favicons/site.webmanifest">
     <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    <link rel="shortcut icon" href="assets/img/logo.png">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#a789d4">
@@ -484,8 +484,8 @@
 
             <div class="work__filters">
                 <span class="work__item active-work" data-filter='all'>All</span>
-                <span class=" work__item" data-filter='.web'>Video</span>
-                <span class=" work__item" data-filter='.movil'>Graphic</span>
+                <span class=" work__item" data-filter='.web'>Long</span>
+                <span class=" work__item" data-filter='.movil'>Short</span>
                 <span class=" work__item" data-filter='.design'>Design</span>
             </div>
 
@@ -493,7 +493,7 @@
                 <div class="work__card mix web">
                     <img src="assets/img/work1.jpg" alt="" class="work__img">
 
-                    <h3 class="work__title">Video Editing</h3>
+                    <h3 class="work__title">Long Editing</h3>
 
                     <a href="#" class="work__button">
                         Demo <i class='bx bx-right-arrow work__icon'></i>
@@ -503,7 +503,7 @@
                 <div class="work__card mix movil">
                     <img src="assets/img/work2.jpg" alt="" class="work__img">
 
-                    <h3 class="work__title">Graphic Design</h3>
+                    <h3 class="work__title">Short Editing</h3>
 
                     <a href="#" class="work__button">
                         Demo <i class='bx bx-right-arrow work__icon'></i>
@@ -523,7 +523,7 @@
                 <div class="work__card mix web">
                     <img src="assets/img/work4.jpg" alt="" class="work__img">
 
-                    <h3 class="work__title">Video Editing</h3>
+                    <h3 class="work__title">Long Editing</h3>
 
                     <a href="#" class="work__button">
                         Demo <i class='bx bx-right-arrow work__icon'></i>
@@ -533,7 +533,7 @@
                 <div class="work__card mix movil">
                     <img src="assets/img/work5.jpg" alt="" class="work__img">
 
-                    <h3 class="work__title">Graphic Design</h3>
+                    <h3 class="work__title">Short Editing</h3>
 
                     <a href="#" class="work__button">
                         Demo <i class='bx bx-right-arrow work__icon'></i>
@@ -629,28 +629,55 @@
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
 
-                    <form action="" class="contact__form">
+                    <form name="submit-to-google-sheet" class="contact__form">
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Name</label>
-                            <input type="text" placeholder="Enter name" class="contact__form-input">
+                            <input name="Name" type="text" placeholder="Enter name" class="contact__form-input">
                         </div>
-
+                    
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Mail</label>
-                            <input type="text" placeholder="Enter email" class="contact__form-input">
+                            <input name="Mail" type="text" placeholder="Enter email" class="contact__form-input">
                         </div>
-
+                    
                         <div class="contact__form-div contact__form-area">
                             <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Write your Message"
-                                class="contact__form-input "></textarea>
+                            <textarea name="Message" id="" cols="30" rows="10" placeholder="Write your Message"
+                                      class="contact__form-input "></textarea>
                         </div>
-
-
-                        <button class="button">
+                    
+                        <button class="button" type="submit">
                             Send Message
                         </button>
                     </form>
+                    
+                    <div class="loading-spinner" style="display:none;">Loading...</div>
+                    
+                    <script>
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwBSFQP4QRa3DqrIQO0XTWLOCoNHf3TVX59rS9oj_ZQO7reoSdvm27dDnakiF7QnZP8/exec';
+                        const form = document.forms['submit-to-google-sheet'];
+                        const spinner = document.querySelector('.loading-spinner');
+                        
+                        form.addEventListener('submit', e => {
+                            e.preventDefault();
+                            spinner.style.display = 'block';
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .then(response => {
+                                    spinner.style.display = 'none';
+                                    if (response.ok) {
+                                        window.location.href = "submit.html";
+                                    } else {
+                                        alert("Submission failed. Please try again later.");
+                                    }
+                                })
+                                .catch(error => {
+                                    spinner.style.display = 'none';
+                                    alert("Submission failed. Please try again later.");
+                                    console.error('Error:', error);
+                                });
+                        });
+                    </script>
+                    
 
                 </div>
 
