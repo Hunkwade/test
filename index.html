@@ -82,7 +82,7 @@
                 <div class="home__data">
                     <span class="home__greeting">Hello, I'm</span>
                     <h1 class="home__name">Altamash Mahmood</h1>
-                    <h3 class="home__education">Video Editor <br> Crafting Visual Stories with Precision and Creativity</h3>
+                    <h3 class="home__education">Video Editor <br> "Innovation in every frame"</h3>
                     
                     <div class="home__button">
                         <a download="" href="assets/pdf/hailee-Cv.pdf" class="button button--ghost">
@@ -133,12 +133,12 @@
                         <div class="about__box">
                             <i class='bx bx-award about__icon'></i>
                             <h3 class="about__title">Experience</h3>
-                            <span class="about__subtitle">3 Years Working</span>
+                            <span class="about__subtitle">5 Years Working</span>
                         </div>
                         <div class="about__box">
                             <i class='bx bx-briefcase-alt about__icon'></i>
                             <h3 class="about__title">Completed</h3>
-                            <span class="about__subtitle">48+ Projects</span>
+                            <span class="about__subtitle">500+ Projects</span>
                         </div>
                         <div class="about__box">
                             <i class='bx bx-support about__icon'></i>
@@ -584,75 +584,72 @@
 
         <!--=============== CONTACT ===============-->
         <section class="contact section" id="contact">
-            <sapn class="section__subtitle">Get in touch</sapn>
+            <span class="section__subtitle">Get in touch</span>
             <h3 class="section__title">Contact Me</h3>
-
+        
             <div class="contact__container container grid">
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-info">Talk to me</h3>
-
+        
                     <div class="contact__info">
                         <div class="contact__card">
                             <i class='bx bx-mail-send contact__card-icon'></i>
                             <h3 class="contact__card-title">Email</h3>
                             <span class="contact__card-data">altamashofficial78@gmail.com</span>
-
+        
                             <a href="mailto:altamashofficial78@gmail.com" target="_blank" class="contact__button">
                                 Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
                             </a>
                         </div>
-
+        
                         <div class="contact__card">
                             <i class='bx bxl-whatsapp contact__card-icon'></i>
                             <h3 class="contact__card-title">Whatsapp</h3>
                             <span class="contact__card-data">+91 75419 58664</span>
-
-                            <a href="https://api.whatsapp.com/send?phone=+917541958664&text=Hey there!" target="_blank"
-                                class="contact__button">
+        
+                            <a href="https://api.whatsapp.com/send?phone=+917541958664&text=Hey there!" target="_blank" class="contact__button">
                                 Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
                             </a>
                         </div>
-
+        
                         <div class="contact__card">
-                            <i class='bx bxl-twitter contact__card-icon'></i>
-                            <h3 class="contact__card-title">Twitter</h3>
-                            <span class="contact__card-data">
-                                Altamash Mahmood</span>
-
-                            <a href="https://twitter.com/usertw" target="_blank" class="contact__button">
+                            <i class='bx bxl-instagram contact__card-icon'></i>
+                            <h3 class="contact__card-title">Instagram</h3>
+                            <span class="contact__card-data">Altamash Mahmood</span>
+        
+                            <a href="https://instagram.com/altamash_official7" target="_blank" class="contact__button">
                                 Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
                             </a>
                         </div>
                     </div>
                 </div>
-
+        
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
-
+        
                     <form name="submit-to-google-sheet" class="contact__form">
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Name</label>
-                            <input name="Name" type="text" placeholder="Enter name" class="contact__form-input">
+                            <input name="Name" type="text" placeholder="Enter name" class="contact__form-input" required>
                         </div>
-                    
+        
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Mail</label>
-                            <input name="Mail" type="text" placeholder="Enter email" class="contact__form-input">
+                            <input name="Mail" type="email" placeholder="Enter email" class="contact__form-input" required>
                         </div>
-                    
+        
                         <div class="contact__form-div contact__form-area">
                             <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="Message" id="" cols="30" rows="10" placeholder="Write your Message"
-                                      class="contact__form-input "></textarea>
+                            <textarea name="Message" id="" cols="30" rows="10" placeholder="Write your Message" class="contact__form-input" required></textarea>
                         </div>
-                    
+        
                         <button class="button" type="submit">
                             Send Message
                         </button>
                     </form>
-                    
+        
                     <div class="loading-spinner" style="display:none;">Loading...</div>
-                    
+        
                     <script>
                         const scriptURL = 'https://script.google.com/macros/s/AKfycbwBSFQP4QRa3DqrIQO0XTWLOCoNHf3TVX59rS9oj_ZQO7reoSdvm27dDnakiF7QnZP8/exec';
                         const form = document.forms['submit-to-google-sheet'];
@@ -660,28 +657,51 @@
                         
                         form.addEventListener('submit', e => {
                             e.preventDefault();
-                            spinner.style.display = 'block';
-                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                .then(response => {
-                                    spinner.style.display = 'none';
-                                    if (response.ok) {
-                                        window.location.href = "submit.html";
-                                    } else {
+                            if (validateForm()) {
+                                spinner.style.display = 'block';
+                                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                    .then(response => {
+                                        spinner.style.display = 'none';
+                                        if (response.ok) {
+                                            window.location.href = "submit.html";
+                                        } else {
+                                            alert("Submission failed. Please try again later.");
+                                        }
+                                    })
+                                    .catch(error => {
+                                        spinner.style.display = 'none';
                                         alert("Submission failed. Please try again later.");
-                                    }
-                                })
-                                .catch(error => {
-                                    spinner.style.display = 'none';
-                                    alert("Submission failed. Please try again later.");
-                                    console.error('Error:', error);
-                                });
+                                        console.error('Error:', error);
+                                    });
+                            }
                         });
+        
+                        function validateForm() {
+                            let valid = true;
+                            const inputs = form.querySelectorAll('input[required], textarea[required]');
+                            inputs.forEach(input => {
+                                if (!input.value) {
+                                    valid = false;
+                                    input.classList.add('input-error');
+                                } else {
+                                    input.classList.remove('input-error');
+                                }
+                            });
+                            if (!valid) {
+                                alert("Please fill out all required fields.");
+                            }
+                            return valid;
+                        }
                     </script>
-                    
-
                 </div>
-
+            </div>
         </section>
+        
+        <style>
+        .input-error {
+            border: 1px solid red;
+        }
+        </style>
     </main>
 
     <!--=============== FOOTER ===============-->
