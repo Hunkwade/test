@@ -538,25 +538,19 @@
                     </a>
                 </div>
 
-                <div class="work__card mix design">
+                <div class="work__card mix design" data-image="assets/Thumbnail/airlines.jpg">
                     <img src="assets/Thumbnail/airlines.jpg" alt="" class="work__img">
-
-                    <h3 class="work__title">Brand Design</h3>
-
+                    <h3 class="work__title">Thumbnail Design</h3>
                 </div>
 
-                <div class="work__card mix design">
+                <div class="work__card mix design" data-image="assets/Thumbnail/hightemp.jpg">
                     <img src="assets/Thumbnail/hightemp.jpg" alt="" class="work__img">
-
-                    <h3 class="work__title">Brand Design</h3>
-
+                    <h3 class="work__title">Thumbnail Design</h3>
                 </div>
-
-                <div class="work__card mix design">
+                
+                <div class="work__card mix design" data-image="assets/Thumbnail/japancrisis.jpg">
                     <img src="assets/Thumbnail/japancrisis.jpg" alt="" class="work__img">
-
-                    <h3 class="work__title">Brand Design</h3>
-
+                    <h3 class="work__title">Thumbnail Design</h3>
                 </div>
 
             </div>
@@ -566,6 +560,13 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <iframe id="videoFrame" width="320" height="200" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="imageModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="imageFrame" src="" alt="Expanded Image">
             </div>
         </div>
 
@@ -836,33 +837,52 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById('videoModal');
-    var span = document.getElementsByClassName('close')[0];
-    var videoFrame = document.getElementById('videoFrame');
-
-    document.querySelectorAll('.work__card').forEach(card => {
-        card.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default action
-            var videoSrc = this.getAttribute('data-video');
-            videoFrame.src = videoSrc;
-            modal.style.display = 'block';
+            var videoModal = document.getElementById('videoModal');
+            var imageModal = document.getElementById('imageModal');
+            var videoFrame = document.getElementById('videoFrame');
+            var imageFrame = document.getElementById('imageFrame');
+            var closeButtons = document.querySelectorAll('.close');
+    
+            document.querySelectorAll('.work__card').forEach(card => {
+                card.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default action
+                    var videoSrc = this.getAttribute('data-video');
+                    var imageSrc = this.getAttribute('data-image');
+    
+                    if (videoSrc) {
+                        // Open video modal
+                        videoFrame.src = videoSrc;
+                        videoModal.style.display = 'block';
+                    } else if (imageSrc) {
+                        // Open image modal
+                        imageFrame.src = imageSrc;
+                        imageModal.style.display = 'block';
+                    }
+                });
+            });
+    
+            closeButtons.forEach(button => {
+                button.onclick = function () {
+                    if (videoModal.style.display === 'block') {
+                        videoModal.style.display = 'none';
+                        videoFrame.src = ''; // Stop the video
+                    } else if (imageModal.style.display === 'block') {
+                        imageModal.style.display = 'none';
+                    }
+                };
+            });
+    
+            window.onclick = function (event) {
+                if (event.target == videoModal) {
+                    videoModal.style.display = 'none';
+                    videoFrame.src = ''; // Stop the video
+                } else if (event.target == imageModal) {
+                    imageModal.style.display = 'none';
+                }
+            };
         });
-    });
-
-    span.onclick = function () {
-        modal.style.display = 'none';
-        videoFrame.src = ''; // Stop the video
-    };
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-            videoFrame.src = ''; // Stop the video
-        }
-    };
-});
-
     </script>
+    
 </body>
 
 </html>
