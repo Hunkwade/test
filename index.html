@@ -2,887 +2,776 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodape</title>
 
-    <!--=============== FAVICON ===============-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicons/site.webmanifest">
-    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="assets/img/logo.png">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#a789d4">
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
+  <!--
+    - custom css link 
+  -->
+  <link rel="stylesheet" href="./assets/css/foodhub.css">
+  <link rel="stylesheet" href="./assets/css/media_query.css">
 
-    <!--=============== BOXICONS ===============-->
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-
-    <title> AM Frameworks </title>
 </head>
 
 <body>
-    <!--=============== HEADER ===============-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">AM Frameworks</a>
 
-            <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item ">
-                        <a href="#home" class="nav__link">
-                            <i class='bx bx-home'></i>
-                        </a>
-                    </li>
+  <!--
+    - main container
+  -->
 
-                    <li class="nav__item ">
-                        <a href="#about" class="nav__link">
-                            <i class='bx bx-user'></i>
-                        </a>
-                    </li>
+  <div class="container">
 
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class='bx bx-book'></i>
-                        </a>
-                    </li>
+    <!--
+      - #HEADER
+    -->
 
-                    <li class="nav__item">
-                        <a href="#work" class="nav__link">
-                            <i class='bx bx-briefcase-alt-2'></i>
-                        </a>
-                    </li>
+    <header>
 
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class='bx bx-message-square-dots'></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <nav class="navbar">
 
-            <!--=============== theme change button ===============-->
-            <i class='bx bx-moon change-theme change-theme-button' id="theme-button"></i>
+        <div class="navbar-wrapper">
 
-        </nav>
+          <a href="#">
+            <img src="./assets/images/logo1.png" alt="logo" width="130">
+          </a>
+
+          <ul class="navbar-nav">
+
+            <li>
+              <a href="#home" class="nav-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#about" class="nav-link">About</a>
+            </li>
+
+            <li>
+              <a href="#services" class="nav-link">Services</a>
+            </li>
+
+            <li>
+              <a href="#menu" class="nav-link">Our Menu</a>
+            </li>
+
+            <li>
+              <a href="#testimonials" class="nav-link">Testimonials</a>
+            </li>
+
+          </ul>
+
+          <div class="navbar-btn-group">
+
+            <button class="shopping-cart-btn">
+              <img src="./assets/images/cart.svg" alt="shopping cart icon" width="18">
+              <span class="count">5</span>
+            </button>
+
+            <button class="menu-toggle-btn">
+              <span class="line one"></span>
+              <span class="line two"></span>
+              <span class="line three"></span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+      <div class="cart-box">
+
+        <ul class="cart-box-ul">
+
+          <h4 class="cart-h4">Your order.</h4>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="./assets/images/menu1.jpg" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Saumon gravlax</h5>
+              <p class="product-price">
+                <span class="small">$</span>9
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="./assets/images/menu2.jpg" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Chevrefried with honey</h5>
+              <p class="product-price">
+                <span class="small">$</span>14
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="./assets/images/menu3.jpg" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Crispy fish</h5>
+              <p class="product-price">
+                <span class="small">$</span>4
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="./assets/images/menu4.jpg" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Stracciatella</h5>
+              <p class="product-price">
+                <span class="small">$</span>11
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="./assets/images/menu5.jpg" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Sea bream carpaccio</h5>
+              <p class="product-price">
+                <span class="small">$</span>19
+              </p>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="cart-btn-group">
+          <button class="btn btn-secondary">View order</button>
+          <button class="btn btn-primary">Checkout</button>
+        </div>
+
+      </div>
+
     </header>
 
-    <!--=============== MAIN ===============-->
-    <main class="main">
-        <!--=============== HOME ===============-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__data">
-                    <span class="home__greeting">Hello, I'm</span>
-                    <h1 class="home__name">Altamash Mahmood</h1>
-                    <h3 class="home__education">Video Editor <br> "Innovation in every frame"</h3>
-                    
-                    <div class="home__button">
-                        <a download="" href="assets/pdf/Altamashcv.pdf" class="button button--ghost">
-                            Download CV
-                        </a>
 
-                        <a href="#about" class="button">About</a>
-                    </div>
-                </div>
 
-                <div class="home__handle">
-                    <img src="assets/img/Photo.png" alt="" class="" style="max-width: 150%; height: auto;">
-                </div>
-                
-                
 
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/altamash-mahmood-4b2660315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
-                    " target="_blank" class="home__social-link">
-                        <i class='bx bxl-linkedin'></i>
-                    </a>
-                    <a href="https://instagram.com/altamash_official7
-                    " target="_blank" class="home__social-link">
-                        <i class='bx bxl-instagram'></i>
-                    </a>
-                    <a href="https://www.facebook.com/altamash.mahmood.98?mibextid=ZbWKwL " target="_blank" class="home__social-link">
-                        <i class='bx bxl-facebook'></i>
-                    </a>
-                </div>
 
-                <a href="#about" class="home__scroll">
-                    <i class='bx bx-mouse home__scroll-icon'></i>
-                    <span class="home__scroll-name">Scroll Down</span>
-                </a>
-            </div>
-        </section>
+    <main>
 
-        <!--=============== ABOUT ===============-->
-        <section class="about section" id="about">
-            <span class="section__subtitle">My Intro</span>
-            <h2 class="section__title">About Me</h2>
+      <!--
+        - #HOME SECTION
+      -->
 
-            <div class="about__container container grid">
-                <img src="assets/img/altfull.jpg" alt="" class="about__img">
+      <section class="home" id="home">
 
-                <div class="about__data">
-                    <div class="about__info">
-                        <div class="about__box">
-                            <i class='bx bx-award about__icon'></i>
-                            <h3 class="about__title">Experience</h3>
-                            <span class="about__subtitle">5 Years Working</span>
-                        </div>
-                        <div class="about__box">
-                            <i class='bx bx-briefcase-alt about__icon'></i>
-                            <h3 class="about__title">Completed</h3>
-                            <span class="about__subtitle">500+ Projects</span>
-                        </div>
-                        <div class="about__box">
-                            <i class='bx bx-support about__icon'></i>
-                            <h3 class="about__title">Support</h3>
-                            <span class="about__subtitle">Online 24/7</span>
-                        </div>
-                    </div>
+        <div class="home-left">
 
-                    <p class="about__description">
-                        Welcome to AM Frame Works, where innovation meets precision in every frame. I'm Altamash Mahmood, founder and lead video editor, with extensive experience collaborating with influencers like the YouTube channel "Dear Sir," boasting 18 million subscribers.
-                    </p>
+          <p class="home-subtext">Hi, new friend!</p>
 
-                    <a href="readmore.html" class="button button--ghost" style="margin-right: 10px;">Read more</a>
-                    <a href="#work" class="button about__button-contact" style="margin-left: 10px;">Portfolio</a>
+          <h1 class="main-heading">We do not cook, we create your emotions!</h1>
 
-                </div>
-            </div>
-        </section>
+          <p class="home-text">
+            Consectetur numquam poro nemo veniam eligendi rem adipisci quo modi
+          </p>
 
-        <!--=============== SKILLS ===============-->
-        <section class="skills section" id="skills">
-            <span class="section__subtitle">My Abilities</span>
-            <h2 class="section__title">My Experience</h2>
+          <div class="btn-group">
 
-            <div class="skills__container container grid">
-                <div class="skills__content">
-                    <h3 class="skills__title">Video Editing</h3>
+            <button class="btn btn-primary btn-icon" onclick="window.location.href='#menu';">
+              <img src="./assets/images/menu.svg" alt="menu icon">
+              Our menu
+            </button>            
 
-                    <div class="skills__box">
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
+            <button class="btn btn-secondary btn-icon" onclick="window.location.href='#about';">
+              <img src="./assets/images/arrow.svg" alt="menu icon">
+              About us
+            </button>
 
-                                <div>
-                                    <h3 class="skills__name"> Premiere Pro</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
+          </div>
 
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">DaVinci </h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">FinalCut Pro</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">Filmora</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">VSDC Editor</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">CapCut</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills__content">
-                    <h3 class="skills__title">Graphic Design</h3>
-
-                    <div class="skills__box">
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">Adobe Illustrator</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">Canva</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">Adobe InDesign</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">Adobe Photoshop</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">Figma</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <i class='bx bxs-badge-check'></i>
-
-                                <div>
-                                    <h3 class="skills__name">Blander</h3>
-                                    <span class="skills__level">Advanced</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-        <!--=============== SERVICES ===============-->
-        <section class="services section">
-            <span class="section__subtitle">My Services</span>
-            <h2 class="section__title">What I Offer</h2>
-
-            <div class="services__container container grid">
-                <div class="services__card">
-                    <div class="serv">
-                        <h3 class="services__title">Video <br> Editing</h3>
-
-                        <span class="services__button">
-                            See More <i class='bx bx-right-arrow services__icon'></i>
-                        </span>
-                    </div>
-
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <i class='bx bx-x services__modal-close'></i>
-
-                            <h3 class="services__modal-title">Video Editing</h3>
-
-                            <p class="services__modal-description">
-                                I apply my creative abilities and hands-on approach to video editing, designing and developing compelling visual content that satisfies both audience expectations and market trends.
-                            </p>
-
-                            <ul class="services__modal-list">
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Storytelling in Video Editing.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Trends in Video Editing Tech.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Essential Skills for Video Editors.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Video Editing's Impact on Content.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Balancing Creativity and Precision.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="services__card">
-                    <h3 class="services__title">Graphic <br> Designing</h3>
-
-                    <span class="services__button">
-                        See More <i class='bx bx-right-arrow services__icon'></i>
-                    </span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <i class='bx bx-x services__modal-close'></i>
-
-                            <h3 class="services__modal-title">Graphic Designing</h3>
-
-                            <p class="services__modal-description">
-                                I design and develop consumer products with a creative flair and hands-on approach, ensuring they meet both customer expectations and market trends, akin to graphic designing.
-                            </p>
-
-                            <ul class="services__modal-list">
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        User-Centered Product Design.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Incorporating Trends in Product Development.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Prototyping and Iterative Design.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Sustainability in Product Design.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Market Research and Product Positioning.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="services__card">
-                    <h3 class="services__title">Product <br> Designing</h3>
-
-                    <span class="services__button">
-                        See More <i class='bx bx-right-arrow services__icon'></i>
-                    </span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <i class='bx bx-x services__modal-close'></i>
-
-                            <h3 class="services__modal-title">Product Designing</h3>
-
-                            <p class="services__modal-description">
-                                We create consumer products with a creative and hands-on approach that meets both customer demands and market trends at AM Frame Works.
-                            </p>
-
-                            <ul class="services__modal-list">
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Principles of Effective Product Design.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Integrating User-Centered Design in Product Development.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Balancing Aesthetics and Functionality in Product Design.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        Innovations in Sustainable Product Design.
-                                    </p>
-                                </li>
-
-                                <li class="services__modal-item">
-                                    <i class='bx bx-check-circle'></i>
-                                    <p class="services__modal-info">
-                                        The Role of Prototyping in Perfecting Product Designs.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--=============== WORK ===============-->
-        <section class="work section" id="work">
-            <span class="section__subtitle">My Portfolio</span>
-            <h2 class="section__title">Recent Works</h2>
-
-            <div class="work__filters">
-                <span class="work__item active-work" data-filter='all'>All</span>
-                <span class=" work__item" data-filter='.long'>Long</span>
-                <span class=" work__item" data-filter='.short'>Short</span>
-                <span class=" work__item" data-filter='.design'>Design</span>
-            </div>
-
-            <div class="work__container container grid">
-                <div class="work__card mix long" data-video="https://www.youtube.com/embed/hLqNTpoDO6E">
-                    <img src="assets/Thumbnail/1.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Long Editing</h3>
-                    <a href="#" class="work__button">
-                        Play <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
-                </div>
-
-                <div class="work__card mix long" data-video="https://www.youtube.com/embed/DM2YeNFdUb4">
-                    <img src="assets/Thumbnail/2.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Long Editing</h3>
-                    <a href="#" class="work__button">
-                        Play <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
-                </div>
-
-                <div class="work__card mix long" data-video="https://www.youtube.com/embed/78lAOmxVgW0">
-                    <img src="assets/Thumbnail/3.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Long Editing</h3>
-                    <a href="#" class="work__button">
-                        Play <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
-                </div>
-
-                <div class="work__card mix short" data-video="https://www.youtube.com/embed/R5DTMPhUO7o">
-                    <img src="assets/Thumbnail/22.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Short Editing</h3>
-                    <a href="#" class="work__button">
-                        Play <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
-                </div>
-
-                <div class="work__card mix short" data-video="https://www.youtube.com/embed/3uvONM8Ilu4">
-                    <img src="assets/Thumbnail/21.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Short Editing</h3>
-                    <a href="#" class="work__button">
-                        Play <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
-                </div>
-
-                <div class="work__card mix short" data-video="https://www.youtube.com/embed/RjuxBAB09QE">
-                    <img src="assets/Thumbnail/24.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Short Editing</h3>
-                    <a href="#" class="work__button">
-                        Play <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
-                </div>
-
-                <div class="work__card mix design" data-image="assets/Thumbnail/airlines.jpg">
-                    <img src="assets/Thumbnail/airlines.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Thumbnail Design</h3>
-                </div>
-
-                <div class="work__card mix design" data-image="assets/Thumbnail/hightemp.jpg">
-                    <img src="assets/Thumbnail/hightemp.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Thumbnail Design</h3>
-                </div>
-                
-                <div class="work__card mix design" data-image="assets/Thumbnail/japancrisis.jpg">
-                    <img src="assets/Thumbnail/japancrisis.jpg" alt="" class="work__img">
-                    <h3 class="work__title">Thumbnail Design</h3>
-                </div>
-
-            </div>
-        </section>
-
-        <div id="videoModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <iframe id="videoFrame" width="320" height="200" frameborder="0" allowfullscreen></iframe>
-            </div>
         </div>
 
-        <div id="imageModal" class="modal" style="display:none;">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <img id="imageFrame" src="" alt="Expanded Image">
-            </div>
+        <div class="home-right">
+
+          <img src="./assets/images/food1.png" alt="food image" class="food-img food-1" width="200" loading="lazy">
+          <img src="./assets/images/food2.png" alt="food image" class="food-img food-2" width="200" loading="lazy">
+          <img src="./assets/images/food3.png" alt="food image" class="food-img food-3" width="200" loading="lazy">
+
+          <img src="./assets/images/dialog-1.svg" alt="dialog" class="dialog dialog-1" width="230">
+          <img src="./assets/images/dialog-2.svg" alt="dialog" class="dialog dialog-2" width="230">
+
+          <img src="./assets/images/circle.svg" alt="circle shape" class="shape shape-1" width="25">
+          <img src="./assets/images/circle.svg" alt="circle shape" class="shape shape-2" width="15">
+          <img src="./assets/images/circle.svg" alt="circle shape" class="shape shape-3" width="30">
+          <img src="./assets/images/ring.svg" alt="ring shape" class="shape shape-4" width="60">
+          <img src="./assets/images/ring.svg" alt="ring shape" class="shape shape-5" width="40">
+
         </div>
 
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="showmore.html" style="display: inline-block; padding: 10px 20px; background-color: #A395E9; color: #0B111E; text-decoration: none; border-radius: 0.8rem; margin: 0 auto; font-weight: 500;">Show All</a>
+      </section>
+
+
+
+
+
+      <!--
+        - #ABOUT SECTION
+      -->
+
+      <section class="about" id="about">
+
+        <div class="about-left">
+
+          <div class="img-box">
+            <img src="./assets/images/about-image.jpg" alt="about image" class="about-img" width="250">
+          </div>
+
+          <div class="abs-content-box">
+            <div class="dotted-border">
+              <p class="number-lg">17</p>
+              <p class="text-md">Years <br> Experiense</p>
+            </div>
+          </div>
+
+          <img src="./assets/images/circle.svg" alt="circle shape" class="shape shape-6" width="20">
+          <img src="./assets/images/circle.svg" alt="circle shape" class="shape shape-7" width="30">
+          <img src="./assets/images/ring.svg" alt="ring shape" class="shape shape-8" width="35">
+          <img src="./assets/images/ring.svg" alt="ring shape" class="shape shape-9" width="80">
+
         </div>
 
-        <!--=============== TESTIMONIALS ===============-->
-        <section class="testimonial section">
-            <span class="section__subtitle">My clients say</span>
-            <h2 class="section__title">Testimonials</h2>
+        <div class="about-right">
 
-            <div class="testimonial__container container swiper">
-                <div class="swiper-wrapper">
+          <h2 class="section-title">We are doing more than
+            you expect</h2>
 
-                    <div class="testimonial__card swiper-slide">
-                        <img src="assets/img/rahul.jpg" alt="" class="testimonial__img">
+          <p class="section-text">
+            Faudantium magnam error temporibus ipsam aliquid neque quibusdam dolorum, quia ea numquam assumenda mollitia
+            dolorem
+            impedit. Voluptate at quis exercitationem officia temporibus adipisci quae totam enim dolorum, assumenda.
+            Sapiente
+            soluta nostrum reprehenderit a velit obcaecati facilis vitae magnam tenetur neque vel itaque inventore eaque
+            explicabo
+            commodi maxime! Aliquam quasi, voluptates odio.
+          </p>
 
-                        <h3 class="testimonial__name">Rahul<br> Founder & CEO of Raskbind</h3>
-                        <p class="testimonial__description">
-                            AM Frame Works, led by Altamash Mahmood, consistently delivers exceptional video editing quality and creativity. As a satisfied client, I've completed many successful projects with their dedicated and detail-oriented team. 
-                        </p>
-                    </div>
+          <p class="section-text">
+            Consectetur adipisicing elit. Cupiditate nesciunt amet facilis numquam, nam adipisci qui voluptate voluptas
+            enim
+            obcaecati veritatis animi nulla, mollitia commodi quaerat ex, autem ea laborum.
+          </p>
 
-                    <div class="testimonial__card swiper-slide">
-                        <img src="assets/img/Akram Raza.png" alt="" class="testimonial__img">
+          <button style="background-color: #F5C532;" class="btn btn-secondary btn-icon" onclick="window.location.href='#about';">
+            <img src="./assets/images/arrow.svg" alt="menu icon">
+            Read more
+          </button>
 
-                        <h3 class="testimonial__name">Akram Raza</h3>
-                        <p class="testimonial__description">
-                            Working with Altamash and the AM Frame Works team has been an absolute pleasure. Their attention to detail and creative flair transformed our raw footage into a captivating video that exceeded our expectations. Their professionalism and commitment to quality make them the go-to video editing service. Highly recommend!
-                        </p>
-                    </div>
+        </div>
 
-                    <div class="testimonial__card swiper-slide">
-                        <img src="assets/img/Anurag Tejash Srivastava.png" alt="" class="testimonial__img">
+      </section>
 
-                        <h3 class="testimonial__name">Anurag Tejash Srivastava</h3>
-                        <p class="testimonial__description">
-                            Choosing AM Frame Works for our video editing needs was the best decision we made. Altamash's creativity and technical skills shone through in every aspect of our project. The seamless process and high-quality output surpassed our expectations. AM Frame Works is our top choice for all future video projects.
-                        </p>
-                    </div>
 
-                    <div class="testimonial__card swiper-slide">
-                        <img src="assets/img/MD Imam.png" alt="" class="testimonial__img">
 
-                        <h3 class="testimonial__name">MD Imam</h3>
-                        <p class="testimonial__description">
-                            I am incredibly impressed with the work done by AM Frame Works. Altamash and his team have a keen eye for detail and a unique ability to tell a story through video. They were responsive, professional, and delivered our project on time. The final product was outstanding and received rave reviews from our audience.
-                        </p>
-                    </div>
 
-                    <div class="testimonial__card swiper-slide">
-                        <img src="assets/img/Raj Khan.jpg" alt="" class="testimonial__img">
 
-                        <h3 class="testimonial__name">Raj Khan</h3>
-                        <p class="testimonial__description">
-                            Working with Altamash at AM Frame Works was a game-changer for my business. His innovative video edits brought my property listings to life, attracting more clients than ever before. Highly recommend!
-                        </p>
-                    </div>
+      <!--
+        - #SERVICES SECTION
+      -->
 
-                    <div class="testimonial__card swiper-slide">
-                        <img src="assets/img/Shailesh Kumar.jpg" alt="" class="testimonial__img">
+      <section class="services" id="services">
 
-                        <h3 class="testimonial__name">Shailesh Kumar</h3>
-                        <p class="testimonial__description">
-                            AM Frame Works exceeded my expectations. The quality of the edits, the quick turnaround time, and the excellent communication made the entire process smooth and enjoyable. My subscribers noticed the difference immediately!
-                        </p>
-                    </div>
+        <div class="service-card">
 
+          <p class="card-number">01</p>
+
+          <h3 class="card-heading">We are located in the city center</h3>
+
+          <p class="card-text">
+            Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <p class="card-number">02</p>
+
+          <h3 class="card-heading">Fresh ingredients from organic farms</h3>
+
+          <p class="card-text">
+            Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <p class="card-number">03</p>
+
+          <h3 class="card-heading">Own fast delivery. 30 min Maximum</h3>
+
+          <p class="card-text">
+            Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <p class="card-number">04</p>
+
+          <h3 class="card-heading">Professional, experienced chefs</h3>
+
+          <p class="card-text">
+            Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <p class="card-number">05</p>
+
+          <h3 class="card-heading">The highest standards of service</h3>
+
+          <p class="card-text">
+            Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #PRODUCT SECTION
+      -->
+
+      <section class="product" id="menu">
+
+        <h2 class="section-title">Most popular dishes</h2>
+
+        <p class="section-text">
+          Consectetur numquam poro nemo veniam
+          eligendi rem adipisci quo modi.
+        </p>
+
+        <div class="products-grid">
+
+          <a href="stracciatella.html">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="./assets/images/menu1.jpg" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Stracciatella</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>11
+                  </p>
                 </div>
-                <div class="swiper-pagination"></div>
+
+                <p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </p>
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
             </div>
 
-        </section>
+          </a>
 
-        <!--=============== CONTACT ===============-->
-        <section class="contact section" id="contact">
-            <span class="section__subtitle">Get in touch</span>
-            <h3 class="section__title">Contact Me</h3>
-        
-            <div class="contact__container container grid">
-                <div class="contact__content">
-                    <h3 class="contact__title contact__title-info">Talk to me</h3>
-        
-                    <div class="contact__info">
-                        <div class="contact__card">
-                            <i class='bx bx-mail-send contact__card-icon'></i>
-                            <h3 class="contact__card-title">Email</h3>
-                            <span class="contact__card-data">altamashofficial78@gmail.com</span>
-        
-                            <a href="mailto:altamashofficial78@gmail.com" target="_blank" class="contact__button">
-                                Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
-                            </a>
-                        </div>
-        
-                        <div class="contact__card">
-                            <i class='bx bxl-whatsapp contact__card-icon'></i>
-                            <h3 class="contact__card-title">Whatsapp</h3>
-                            <span class="contact__card-data">+91 75419 58664</span>
-        
-                            <a href="https://api.whatsapp.com/send?phone=+917541958664&text=Hey there!" target="_blank" class="contact__button">
-                                Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
-                            </a>
-                        </div>
-        
-                        <div class="contact__card">
-                            <i class='bx bxl-instagram contact__card-icon'></i>
-                            <h3 class="contact__card-title">Instagram</h3>
-                            <span class="contact__card-data">Altamash Mahmood</span>
-        
-                            <a href="https://instagram.com/altamash_official7" target="_blank" class="contact__button">
-                                Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
-                            </a>
-                        </div>
-                    </div>
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="./assets/images/menu2.jpg" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Chevrefrit au miel</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
                 </div>
-        
-                <div class="contact__content">
-                    <h3 class="contact__title contact__title-form">Write Me your Message</h3>
-        
-                    <form name="submit-to-google-sheet" class="contact__form">
-                        <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Name</label>
-                            <input name="Name" type="text" placeholder="Enter name" class="contact__form-input" required>
-                        </div>
-        
-                        <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Mail</label>
-                            <input name="Mail" type="email" placeholder="Enter email" class="contact__form-input" required>
-                        </div>
-        
-                        <div class="contact__form-div contact__form-area">
-                            <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="Message" id="" cols="30" rows="10" placeholder="Write your Message" class="contact__form-input" required></textarea>
-                        </div>
-        
-                        <button class="button" type="submit">
-                            Send Message
-                        </button>
-                    </form>
-        
-                    <div class="loading-spinner" style="display:none;">Loading...</div>
-        
-                    <script>
-                        const scriptURL = 'https://script.google.com/macros/s/AKfycbyl_NHA66XTIUzzDxTw17o_1npq1-ShTX1qKi8lkL5yoEgYMBnYtZmOWkfMn9F4W7J5Ng/exec';
-                        const form = document.forms['submit-to-google-sheet'];
-                        const spinner = document.querySelector('.loading-spinner');
-                        
-                        form.addEventListener('submit', e => {
-                            e.preventDefault();
-                            if (validateForm()) {
-                                spinner.style.display = 'block';
-                                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                    .then(response => {
-                                        spinner.style.display = 'none';
-                                        if (response.ok) {
-                                            window.location.href = "submit.html";
-                                        } else {
-                                            alert("Submission failed. Please try again later.");
-                                        }
-                                    })
-                                    .catch(error => {
-                                        spinner.style.display = 'none';
-                                        alert("Submission failed. Please try again later.");
-                                        console.error('Error:', error);
-                                    });
-                            }
-                        });
-        
-                        function validateForm() {
-                            let valid = true;
-                            const inputs = form.querySelectorAll('input[required], textarea[required]');
-                            inputs.forEach(input => {
-                                if (!input.value) {
-                                    valid = false;
-                                    input.classList.add('input-error');
-                                } else {
-                                    input.classList.remove('input-error');
-                                }
-                            });
-                            if (!valid) {
-                                alert("Please fill out all required fields.");
-                            }
-                            return valid;
-                        }
-                    </script>
+
+                <p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </p>
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
                 </div>
+
+              </div>
+
             </div>
-        </section>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="./assets/images/menu3.jpg" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Vegan</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Saumon Gravlax</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>9
+                  </p>
+                </div>
+
+                <p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </p>
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="./assets/images/menu4.jpg" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge red">
+                  <ion-icon name="flame"></ion-icon>
+                  <p>Hot</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Croustillant de poisson</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>4
+                  </p>
+                </div>
+
+                <p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </p>
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="./assets/images/menu5.jpg" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Vegan</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Carpaccio de daurade</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>6
+                  </p>
+                </div>
+
+                <p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </p>
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="./assets/images/menu2.jpg" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Chevrefrit au miel</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                <p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </p>
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <button class="btn btn-primary btn-icon" onclick="window.location.href='menu.html';">
+          <img src="./assets/images/menu.svg" alt="menu icon">
+          Full menu
+        </button>
         
-        <style>
-        .input-error {
-            border: 1px solid red;
-        }
-        </style>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #TESTIMONIALS SECTION
+      -->
+
+      <section class="testimonials" id="testimonials">
+
+        <h2 class="section-title">What our customers say?</h2>
+
+        <p class="section-text">
+          Consectetur numquam poro nemo veniam
+          eligendi rem adipisci quo modi.
+        </p>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonials-card">
+
+            <h4 class="card-title">Very tasty</h4>
+
+            <div class="testimonials-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="testimonials-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugiat totam nobis quas unde excepturi
+              inventore possimus
+              laudantium provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
+              tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem accusamus! Quibusdam
+              labore,
+              aliquam dolor harum!
+            </p>
+
+            <div class="customer-info">
+              <div class="customer-img-box">
+                <img src="./assets/images/testimonials1.jpg" alt="customer image" class="customer-img" width="100" loading="lazy">
+              </div>
+
+              <h5 class="customer-name">Emma Newman</h5>
+            </div>
+
+          </div>
+
+          <div class="testimonials-card">
+          
+            <h4 class="card-title">I have lunch here every day</h4>
+          
+            <div class="testimonials-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          
+            <p class="testimonials-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugiat totam nobis quas unde excepturi
+              inventore possimus
+              laudantium provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
+              tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem accusamus! Quibusdam
+              labore,
+              aliquam dolor harum!
+            </p>
+          
+            <div class="customer-info">
+              <div class="customer-img-box">
+                <img src="./assets/images/testimonials2.jpg" alt="customer image" class="customer-img" width="100" loading="lazy">
+              </div>
+          
+              <h5 class="customer-name">Paul Trueman</h5>
+            </div>
+          
+          </div>
+
+        </div>
+
+      </section>
+
     </main>
 
-    <!--=============== FOOTER ===============-->
-    <footer class="footer">
-        <div class="footer__container container">
-            <h1 class="footer__title">AM Frameworks</h1>
 
-            <ul class="footer__list">
 
-                <li class="footer__item">
-                    <a href="#" class="footer__link">Home</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#about" class="footer__link">About</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#skills" class="footer__link">Skills</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#work" class="footer__link">Work</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#contact" class="footer__link">Contact</a>
-                </li>
-            </ul>
 
-            <ul class="footer__social">
-                <li class="footer__social-item">
-                    <a href="https://www.facebook.com/altamash.mahmood.98?mibextid=ZbWKwL" target="_blank" class="footer__social-link">
-                        <i class='bx bxl-facebook footer__social-icon'></i>
-                    </a>
-                </li>
-                <li class="footer__social-item">
-                    <a href="https://x.com/AltamashM86472?t=TcZwUfHlvG6s51zLaAtoKQ&s=09" target="_blank" class="footer__social-link">
-                        <i class='bx bxl-twitter footer__social-icon'></i>
-                    </a>
-                </li>
-                <li class="footer__social-item">
-                    <a href="
-                    https://www.linkedin.com/in/altamash-mahmood-4b2660315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
-                    " target="_blank" class="footer__social-link">
-                        <i class='bx bxl-linkedin footer__social-icon'></i>
-                    </a>
-                </li>
-                <li class="footer__social-item">
-                    <a href="
-                    https://instagram.com/altamash_official7
-                    " target="_blank" class="footer__social-link">
-                        <i class='bx bxl-instagram footer__social-icon'></i>
-                    </a>
-                </li>
-            </ul>
 
-            <span class="footer__copy">
-                &#169; 2024 AM Frameworks Company. All rights reserved.
-            </span>
+    <!--
+      - #FOOTER
+    -->
+
+    <footer>
+
+      <div class="footer-wrapper">
+
+        <a href="#">
+          <img src="./assets/images/logo2.png" alt="logo" class="footer-brand" width="130">
+        </a>
+
+        <div class="social-link">
+
+          <a href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+
         </div>
+
+        <p class="copyright">&copy; Copyright 2024 dodape. All Rights Reserved.</p>
+
+      </div>
+
     </footer>
 
-    <!--=============== SCROLLREVEAL ===============-->
+  </div>
 
-    <!-- <script src="assets/js/scrollreveal.min.js"></script> -->
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
-    <!--=============== SWIPER JS ===============-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
 
-    <!--=============== MIXITUP FILTER ===============-->
-    <script src="assets/js/mixitup.min.js"></script>
 
-    <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var videoModal = document.getElementById('videoModal');
-            var imageModal = document.getElementById('imageModal');
-            var videoFrame = document.getElementById('videoFrame');
-            var imageFrame = document.getElementById('imageFrame');
-            var closeButtons = document.querySelectorAll('.close');
-    
-            document.querySelectorAll('.work__card').forEach(card => {
-                card.addEventListener('click', function (event) {
-                    event.preventDefault(); // Prevent default action
-                    var videoSrc = this.getAttribute('data-video');
-                    var imageSrc = this.getAttribute('data-image');
-    
-                    if (videoSrc) {
-                        // Open video modal
-                        videoFrame.src = videoSrc;
-                        videoModal.style.display = 'block';
-                    } else if (imageSrc) {
-                        // Open image modal
-                        imageFrame.src = imageSrc;
-                        imageModal.style.display = 'block';
-                    }
-                });
-            });
-    
-            closeButtons.forEach(button => {
-                button.onclick = function () {
-                    if (videoModal.style.display === 'block') {
-                        videoModal.style.display = 'none';
-                        videoFrame.src = ''; // Stop the video
-                    } else if (imageModal.style.display === 'block') {
-                        imageModal.style.display = 'none';
-                    }
-                };
-            });
-    
-            window.onclick = function (event) {
-                if (event.target == videoModal) {
-                    videoModal.style.display = 'none';
-                    videoFrame.src = ''; // Stop the video
-                } else if (event.target == imageModal) {
-                    imageModal.style.display = 'none';
-                }
-            };
-        });
-    </script>
-    
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/foodhub.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>
