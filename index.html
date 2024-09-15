@@ -107,8 +107,6 @@
 
         <div class="home-left">
 
-          <p class="home-subtext">Hi, new friend!</p>
-
           <h1 class="main-heading">We do not cook, we create your emotions!</h1>
 
           <p class="home-text">
@@ -149,6 +147,157 @@
         </div>
 
       </section>
+
+      <!-- Handcrafted Curations Section -->
+<section class="best-selling" id=""> 
+  <h1 class="section-heading">Delisious Menu</h1>
+  <div class="best-selling-container">
+      <div class="best-selling-item">
+          <a href="maintenance.html">
+            <img src="https://sugargeekshow.com/wp-content/uploads/2019/10/chocolate-chip-muffins-featured.jpg" class="best-selling-image" alt="Kopi Luwak">
+          </a>
+          <p class="food-name">Muffins</p>
+      </div>
+      <div class="best-selling-item">
+          <a href="maintenance.html">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrjQLp2f1xhU9JTNQTRHhEbIR7mIesvIGRQQ&s" class="best-selling-image" alt="Arabica">
+          </a>
+          <p class="food-name">Croissants</p>
+      </div>
+      <div class="best-selling-item">
+          <a href="maintenance.html">
+            <img src="https://assets.bonappetit.com/photos/5ca534485e96521ff23b382b/1:1/w_2560%2Cc_limit/chocolate-chip-cookie.jpg" class="best-selling-image" alt="Robusta">
+          </a>
+          <p class="food-name">Cookies</p>
+      </div>
+      <div class="best-selling-item">
+          <a href="maintenance.html">
+            <img src="https://static01.nyt.com/images/2023/11/09/multimedia/09piesrex3-apple/09piesrex4-lemon-cqtk-superJumbo.jpg" class="best-selling-image" alt="Excelsa">
+          </a>
+          <p class="food-name">Pies</p>
+      </div>
+      <div class="best-selling-item">
+          <a href="maintenance.html">
+            <img src="https://www.recipetineats.com/tachyon/2020/09/Vanilla-Cupcakes-with-Vanilla-Swiss-Meringue-SQ.jpg" class="best-selling-image" alt="Liberica">
+          </a>
+          <p class="food-name">Cupcakes</p>
+      </div>
+      <div class="best-selling-item">
+        <a href="maintenance.html">
+          <img src="https://www.bakingkneads.com/wp-content/uploads/2022/03/Sweet-Chocolate-Macarons-on-a-Wooden-Table.jpg.webp" class="best-selling-image" alt="Excelsa">
+        </a>
+        <p class="food-name">Macaroons</p>
+    </div>
+    <div class="best-selling-item">
+      <a href="maintenance.html">
+        <img src="https://www.funfoodfrolic.com/wp-content/uploads/2020/03/White-Sauce-Pasta-2.jpg" class="best-selling-image" alt="Liberica">
+      </a>
+      <p class="food-name">Pasta</p>
+  </div>
+  <div class="best-selling-item">
+    <a href="maintenance.html">
+      <img src="https://www.cookwithnabeela.com/wp-content/uploads/2024/02/ChocolateDippedDoughnuts-500x500.webp" class="best-selling-image" alt="Liberica">
+    </a>
+    <p class="food-name">Doughnuts</p>
+  </div>
+  <div class="best-selling-item">
+    <a href="maintenance.html">
+      <img src="https://www.eatingwell.com/thmb/apRfjNIh3xtoISF_82Ezp1X8dI0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Cucumber-Caprese-Sandwich-7964569-4000x4000-dea86ea3be064e8d9f55445ac01b17b1.jpg" class="best-selling-image" alt="Liberica">
+    </a>
+    <p class="food-name">Sandwich</p>
+</div>
+<div class="best-selling-item">
+  <a href="maintenance.html">
+    <img src="https://spicecravings.com/wp-content/uploads/2021/09/Air-Fryer-Garlic-Bread-Featured.jpg" class="best-selling-image" alt="Liberica">
+  </a>
+  <p class="food-name">Garlic bread</p>
+</div>
+<div class="best-selling-item">
+  <a href="maintenance.html">
+    <img src="https://images.immediate.co.uk/production/volatile/sites/2/2015/05/8443.jpg?quality=90&resize=700,466" class="best-selling-image" alt="Liberica">
+  </a>
+  <p class="food-name">Sourdough</p>
+</div>
+<div class="best-selling-item">
+  <a href="maintenance.html">
+    <img src="https://simply-delicious-food.com/wp-content/uploads/2019/10/Mushroom-grilled-cheese-1-500x500.jpg" class="best-selling-image" alt="Liberica">
+  </a>
+  <p class="food-name">Baguette</p>
+</div>
+  </div>
+</section>
+
+<style>
+/* Best Selling Section */
+.best-selling {
+  padding: 40px 5px; /* Padding for top and bottom */
+  text-align: center; /* Center the heading and food names */
+}
+
+.section-heading {
+color: #241F42;
+  font-size: 2.1em; /* Increased font size for the heading */
+  margin-bottom: 40px;
+}
+
+.best-selling-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  gap: 20px; /* Increased gap between items */
+  padding: 0 10px; /* Adjust padding if necessary */
+}
+
+/* Hide scrollbar */
+.best-selling-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure item alignment and spacing */
+.best-selling-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+/* Default image size */
+.best-selling-image {
+  width: 100px; /* Base width */
+  height: 100px; /* Base height */
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* For tablets and larger screens, make the images larger */
+@media (min-width: 768px) {
+  .best-selling-image {
+    width: 150px; /* Tablet size */
+    height: 150px; /* Tablet size */
+  }
+}
+
+/* For desktop and larger screens, decrease size */
+@media (min-width: 1024px) {
+  .best-selling-image {
+    width: 200px; /* Smaller desktop size */
+    height: 200px; /* Smaller desktop size */
+  }
+  
+  .best-selling-container {
+    gap: 70px; /* Adjust gap for desktop */
+  }
+}
+
+.food-name {
+  color: #241F42;
+  font-size: 0.9em; /* Increased font size for food names */
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+</style>
 
 
       <!--
@@ -675,6 +824,7 @@
     - custom js link
   -->
   <script src="./assets/js/foodhub.js"></script>
+  
 
   <!--
     - ionicon link
