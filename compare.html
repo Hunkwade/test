@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Bikes - Bikeloo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts: Poppins, Inter, Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Bikeloo</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="bikes/all.html">All Bikes</a></li>
+                    <li><a href="bikes/brands/index.html">Brands</a></li>
+                    <li><a href="compare.html">Compare Bikes</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="compare-bikes-section" data-aos="fade-up">
+            <div class="container">
+                <h1 class="section-title">Compare Bikes</h1>
+
+                <div class="compare-selection" data-aos="fade-up" data-aos-delay="100">
+                    <select id="bike1-select">
+                        <option value="">Select Bike 1</option>
+                        <!-- Options will be dynamically loaded or added here -->
+                        <option value="sportster-iron-883">Sportster Iron 883</option>
+                        <option value="kawasaki-ninja-400">Kawasaki Ninja 400</option>
+                        <option value="royal-enfield-classic-350">Royal Enfield Classic 350</option>
+                        <option value="bmw-g310gs">BMW G 310 GS</option>
+                        <option value="triumph-speed-400">Triumph Speed 400</option>
+                        <option value="ktm-390-duke">KTM 390 Duke</option>
+                        <option value="husqvarna-svartpilen-401">Husqvarna Svartpilen 401</option>
+                        <option value="zero-srf">Zero SR/F</option>
+                        <option value="ola-s1-pro">Ola S1 Pro</option>
+                        <option value="ultraviolette-f77">Ultraviolette F77</option>
+                    </select>
+                    <span>VS</span>
+                    <select id="bike2-select">
+                        <option value="">Select Bike 2</option>
+                        <!-- Options will be dynamically loaded or added here -->
+                        <option value="sportster-iron-883">Sportster Iron 883</option>
+                        <option value="kawasaki-ninja-400">Kawasaki Ninja 400</option>
+                        <option value="royal-enfield-classic-350">Royal Enfield Classic 350</option>
+                        <option value="bmw-g310gs">BMW G 310 GS</option>
+                        <option value="triumph-speed-400">Triumph Speed 400</option>
+                        <option value="ktm-390-duke">KTM 390 Duke</option>
+                        <option value="husqvarna-svartpilen-401">Husqvarna Svartpilen 401</option>
+                        <option value="zero-srf">Zero SR/F</option>
+                        <option value="ola-s1-pro">Ola S1 Pro</option>
+                        <option value="ultraviolette-f77">Ultraviolette F77</option>
+                    </select>
+                    <button class="btn btn-primary" id="compare-button">Compare Bikes</button>
+                </div>
+
+                <div class="compare-results" style="display: none;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="compare-bike-info" data-aos="zoom-in">
+                        <img src="assets/images/placeholder.jpg" alt="Bike 1" id="compare-bike1-img" loading="lazy">
+                        <h3 id="compare-bike1-name">Bike 1 Name</h3>
+                    </div>
+                    <div class="compare-table" data-aos="fade-up" data-aos-delay="300">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Specification</th>
+                                    <th id="compare-spec-bike1">Bike 1</th>
+                                    <th id="compare-spec-bike2">Bike 2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Comparison rows will be dynamically loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="compare-bike-info" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/images/placeholder.jpg" alt="Bike 2" id="compare-bike2-img" loading="lazy">
+                        <h3 id="compare-bike2-name">Bike 2 Name</h3>
+                    </div>
+                </div>
+
+                <div class="no-comparison-selected text-center" data-aos="fade-up" data-aos-delay="100">
+                    <p>Select two bikes above to see a side-by-side comparison.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Bikeloo</a>
+                <p>Explore the world of bikes with detailed information, comparisons, and the latest news.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="bikes/all.html">All Bikes</a></li>
+                    <li><a href="bikes/brands/index.html">Brands</a></li>
+                    <li><a href="compare.html">Compare Bikes</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Bike Lane, Velocita City</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                <p><i class="fas fa-envelope"></i> info@bikeloo.com</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bikeloo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- AOS.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
