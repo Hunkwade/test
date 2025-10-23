@@ -2,248 +2,386 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bikeloo - Your ultimate destination for detailed bike information, comparisons, and latest news. Explore bikes by brand, category, and type.">
-    <meta name="keywords" content="bikes, motorcycles, scooters, electric bikes, bike comparisons, bike specifications, latest bikes, Bikeloo">
-    <meta name="author" content="Bikeloo Team">
-    <title>Bikeloo - Explore All Bikes</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts: Poppins, Inter, Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS Animate On Scroll Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>BikeLoo - Premium Bike Showcase & Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo">Bikeloo</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="bikes/all.html">All Bikes</a></li>
-                    <li><a href="bikes/brands/index.html">Brands</a></li>
-                    <li><a href="compare.html">Compare Bikes</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-motorcycle"></i>
+                <span>Bike<span class="highlight">Loo</span></span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#bikes" class="nav-link">Bikes</a>
+                <a href="#compare" class="nav-link">Compare</a>
+                <a href="#brands" class="nav-link">Brands</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="compare-btn" id="compareBtn">
+                    <i class="fas fa-balance-scale"></i>
+                    Compare (<span id="compareCount">0</span>)
                 </button>
-                <button class="menu-toggle" aria-label="Open menu">
+                <button class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section class="hero-section">
-            <div class="hero-bg">
-                <!-- Placeholder for looping background bike video or high-quality banner -->
-                <img src="https://static0.topspeedimages.com/wordpress/wp-content/uploads/2023/04/tiger-1200_rally-explorer_my22_n4i2550_ml.jpg?w=1600&h=900&fit=crop" alt="Motorcycle on road" class="hero-img">
-                <!-- <video autoplay muted loop playsinline class="hero-video">
-                    <source src="assets/videos/bike-hero.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video> -->
-            </div>
-           
-        </section>
-
-        <section id="popular-bikes" class="bike-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">Popular Bikes</h2>
-                <div class="bike-cards-grid">
-                    <!-- Bike cards will be dynamically loaded here or added manually -->
-                    <div class="bike-card" data-aos="zoom-in">
-                        <img src="https://imgd.aeplcdn.com/476x268/bw/models/harleydavidson-iron-883-standard20200613230206.jpg" alt="Popular Bike 1" loading="lazy">
-                        <h3>Sportster Iron 883</h3>
-                        <p>Harley-Davidson</p>
-                        <span class="price">$11,999</span>
-                        <a href="bikes/details/sportster-iron-883.html" class="btn btn-secondary">View Details</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>India's #1 Bike Platform</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Find Your</span>
+                    <span class="title-line gradient-text">Dream Bike</span>
+                </h1>
+                <p class="hero-subtitle">Explore, Compare & Choose from 100+ Premium Motorcycles</p>
+                
+                <!-- Quick Action Buttons for Mobile -->
+                <div class="hero-quick-actions">
+                    <button class="quick-action-btn" onclick="document.getElementById('bikeSearch').focus()">
+                        <i class="fas fa-search"></i>
+                        <span>Search Bikes</span>
+                    </button>
+                    <button class="quick-action-btn" onclick="document.getElementById('compare').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Compare</span>
+                    </button>
+                </div>
+                
+                <div class="hero-search">
+                    <i class="fas fa-search search-icon-mobile"></i>
+                    <input type="text" id="heroSearch" placeholder="Search bikes by name, brand, or category...">
+                    <button class="search-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <h3>100+</h3>
+                        <p>Bike Models</p>
                     </div>
-                    <div class="bike-card" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://www.bikes4sale.in/pictures/default/kawasaki-ninja-400/kawasaki-ninja-400-640.jpg" alt="Popular Bike 2" loading="lazy">
-                        <h3>Kawasaki Ninja 400</h3>
-                        <p>Kawasaki</p>
-                        <span class="price">$5,299</span>
-                        <a href="bikes/details/kawasaki-ninja-400.html" class="btn btn-secondary">View Details</a>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>20+</h3>
+                        <p>Top Brands</p>
                     </div>
-                    <div class="bike-card" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://imgd.aeplcdn.com/1056x594/n/oxqqleb_1768251.jpg?q=80" alt="Popular Bike 3" loading="lazy">
-                        <h3>Royal Enfield Classic 350</h3>
-                        <p>Royal Enfield</p>
-                        <span class="price">$4,999</span>
-                        <a href="bikes/details/royal-enfield-classic-350.html" class="btn btn-secondary">View Details</a>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+                
+                <!-- Mobile Featured Categories -->
+                <div class="hero-categories-mobile">
+                    <h4>Popular Categories</h4>
+                    <div class="mini-category-grid">
+                        <div class="mini-category" data-category="sport">
+                            <i class="fas fa-bolt"></i>
+                            <span>Sport</span>
+                        </div>
+                        <div class="mini-category" data-category="cruiser">
+                            <i class="fas fa-road"></i>
+                            <span>Cruiser</span>
+                        </div>
+                        <div class="mini-category" data-category="electric">
+                            <i class="fas fa-charging-station"></i>
+                            <span>Electric</span>
+                        </div>
+                        <div class="mini-category" data-category="scooter">
+                            <i class="fas fa-scooter"></i>
+                            <span>Scooter</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Latest Launches Section -->
-        <section id="latest-launches" class="bike-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">Latest Launches</h2>
-                <div class="bike-cards-grid">
-                    <!-- Latest launch bike cards -->
-                    <div class="bike-card" data-aos="zoom-in">
-                        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/triumph-speed-400-standard1740985228351.jpg?q=80" alt="Latest Bike 1" loading="lazy">
-                        <h3>Triumph Speed 400</h3>
-                        <p>Triumph</p>
-                        <span class="price">$5,595</span>
-                        <a href="bikes/details/triumph-speed-400.html" class="btn btn-secondary">View Details</a>
-                    </div>
-                    <div class="bike-card" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/ktm-select-model-atlantic-blue-1694407102580.png?q=80" alt="Latest Bike 2" loading="lazy">
-                        <h3>KTM 390 Duke</h3>
-                        <p>KTM</p>
-                        <span class="price">$5,899</span>
-                        <a href="bikes/details/ktm-390-duke.html" class="btn btn-secondary">View Details</a>
-                    </div>
-                    <div class="bike-card" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/168667/svartpilen-401-right-side-view-3.png?isig=0" alt="Latest Bike 3" loading="lazy">
-                        <h3>Husqvarna Svartpilen 401</h3>
-                        <p>Husqvarna</p>
-                        <span class="price">$5,399</span>
-                        <a href="bikes/details/husqvarna-svartpilen-401.html" class="btn btn-secondary">View Details</a>
+            <div class="hero-image">
+                <div class="bike-showcase">
+                    <div class="bike-glow"></div>
+                    <div class="floating-bike">
+                        <i class="fas fa-motorcycle"></i>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll to Explore</span>
+        </div>
+    </section>
 
-        <!-- Featured Categories Section -->
-        <section class="bike-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">Featured Categories</h2>
-                <div class="category-grid">
-                    <div class="category-card" data-aos="zoom-in">
-                        <img src="assets/images/electric-bike-1.jpg" alt="Electric Bikes">
-                        <h3>Electric Bikes</h3>
-                        <p>Discover the future of riding with our cutting-edge electric motorcycles.</p>
-                        <a href="bikes/categories/electric.html" class="btn btn-secondary">View Category</a>
+    <!-- Quick Filters -->
+    <section class="quick-filters">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="filter-grid">
+                <div class="filter-card" data-category="sport">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Sport Bikes</h3>
+                    <p>High Performance</p>
+                </div>
+                <div class="filter-card" data-category="cruiser">
+                    <i class="fas fa-road"></i>
+                    <h3>Cruisers</h3>
+                    <p>Long Distance</p>
+                </div>
+                <div class="filter-card" data-category="commuter">
+                    <i class="fas fa-city"></i>
+                    <h3>Commuter</h3>
+                    <p>Daily Use</p>
+                </div>
+                <div class="filter-card" data-category="adventure">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Adventure</h3>
+                    <p>Off-Road Ready</p>
+                </div>
+                <div class="filter-card" data-category="electric">
+                    <i class="fas fa-charging-station"></i>
+                    <h3>Electric</h3>
+                    <p>Zero Emission</p>
+                </div>
+                <div class="filter-card" data-category="scooter">
+                    <i class="fas fa-scooter"></i>
+                    <h3>Scooters</h3>
+                    <p>Easy Riding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bikes Listing Section -->
+    <section class="bikes-section" id="bikes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Our Collection</h2>
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="bikeSearch" placeholder="Search bikes...">
                     </div>
-                    <div class="category-card" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/images/popular-bike-1.jpg" alt="Cruiser Bikes">
-                        <h3>Cruiser Bikes</h3>
-                        <p>Experience comfort and style with our extensive range of cruiser motorcycles.</p>
-                        <a href="bikes/categories/cruiser.html" class="btn btn-secondary">View Category</a>
+                    <select id="brandFilter" class="filter-select">
+                        <option value="">All Brands</option>
+                        <option value="honda">Honda</option>
+                        <option value="yamaha">Yamaha</option>
+                        <option value="royal enfield">Royal Enfield</option>
+                        <option value="ktm">KTM</option>
+                        <option value="bajaj">Bajaj</option>
+                        <option value="tvs">TVS</option>
+                        <option value="suzuki">Suzuki</option>
+                        <option value="kawasaki">Kawasaki</option>
+                        <option value="ducati">Ducati</option>
+                        <option value="harley-davidson">Harley-Davidson</option>
+                    </select>
+                    <select id="priceFilter" class="filter-select">
+                        <option value="">All Prices</option>
+                        <option value="0-100000">Under ₹1 Lakh</option>
+                        <option value="100000-200000">₹1-2 Lakhs</option>
+                        <option value="200000-500000">₹2-5 Lakhs</option>
+                        <option value="500000-999999999">Above ₹5 Lakhs</option>
+                    </select>
+                    <select id="sortFilter" class="filter-select">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="mileage">Best Mileage</option>
+                        <option value="power">Most Powerful</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="bikes-grid" id="bikesGrid">
+                <!-- Bikes will be dynamically loaded here -->
+            </div>
+
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    Load More Bikes
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Brands -->
+    <section class="brands-section" id="brands">
+        <div class="container">
+            <h2 class="section-title">Popular Brands</h2>
+            <div class="brands-grid">
+                <div class="brand-card" data-brand="honda">
+                    <div class="brand-logo">HONDA</div>
+                    <p>25 Models</p>
+                </div>
+                <div class="brand-card" data-brand="yamaha">
+                    <div class="brand-logo">YAMAHA</div>
+                    <p>18 Models</p>
+                </div>
+                <div class="brand-card" data-brand="royal enfield">
+                    <div class="brand-logo">Royal Enfield</div>
+                    <p>12 Models</p>
+                </div>
+                <div class="brand-card" data-brand="ktm">
+                    <div class="brand-logo">KTM</div>
+                    <p>15 Models</p>
+                </div>
+                <div class="brand-card" data-brand="bajaj">
+                    <div class="brand-logo">BAJAJ</div>
+                    <p>20 Models</p>
+                </div>
+                <div class="brand-card" data-brand="tvs">
+                    <div class="brand-logo">TVS</div>
+                    <p>16 Models</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compare Modal -->
+    <div class="compare-modal" id="compareModal">
+        <div class="compare-content">
+            <div class="compare-header">
+                <h2>Compare Bikes</h2>
+                <button class="close-modal" id="closeCompare">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="compare-bikes-container" id="compareBikesContainer">
+                <!-- Selected bikes for comparison will appear here -->
+            </div>
+            <div class="compare-table-container" id="compareTableContainer">
+                <!-- Comparison table will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bike Detail Modal -->
+    <div class="bike-modal" id="bikeModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeBikeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Bike details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <section class="news-section" id="news">
+        <div class="container">
+            <h2 class="section-title">Latest News & Updates</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="news-content">
+                        <span class="news-tag">Launch</span>
+                        <h3>New Sport Bikes Coming in 2025</h3>
+                        <p>Exciting new models from top manufacturers hitting the market soon...</p>
+                        <span class="news-date">Oct 20, 2025</span>
                     </div>
-                    <div class="category-card" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/images/blog-2.jpg" alt="Adventure Bikes">
-                        <h3>Adventure Bikes</h3>
-                        <p>Conquer any terrain with powerful and versatile adventure touring bikes.</p>
-                        <a href="bikes/categories/adventure.html" class="btn btn-secondary">View Category</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="news-content">
+                        <span class="news-tag">Electric</span>
+                        <h3>Electric Revolution in Two-Wheelers</h3>
+                        <p>The future of motorcycling is electric. See what's changing...</p>
+                        <span class="news-date">Oct 18, 2025</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="news-content">
+                        <span class="news-tag">Technology</span>
+                        <h3>Advanced Safety Features in Modern Bikes</h3>
+                        <p>How technology is making motorcycling safer than ever...</p>
+                        <span class="news-date">Oct 15, 2025</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Electric Bikes Section -->
-        <section id="electric-bikes" class="bike-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">Electric Bikes</h2>
-                <div class="bike-cards-grid">
-                    <!-- Electric bike cards -->
-                    <div class="bike-card" data-aos="zoom-in">
-                        <img src="https://images.prismic.io/zero-cms-disco/Zxt3eIF3NbkBYB9a_SRF_MY25_no_shadow_dark.png?auto=format,compress" alt="Electric Bike 1" loading="lazy">
-                        <h3>Zero SR/F</h3>
-                        <p>Zero Motorcycles</p>
-                        <span class="price">$19,495</span>
-                        <a href="bikes/details/zero-srf.html" class="btn btn-secondary">View Details</a>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-motorcycle"></i>
+                        <span>Bike<span class="highlight">Loo</span></span>
                     </div>
-                    <div class="bike-card" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fbike-images%2Fcolors%2Fola-electric%2Fs1-pro%2Fola-electric-s1-pro-jet-black.png%3Fv%3D1653659477&w=640&q=75" alt="Electric Bike 2" loading="lazy">
-                        <h3>Ola S1 Pro</h3>
-                        <p>Ola Electric</p>
-                        <span class="price">$1,899</span>
-                        <a href="bikes/details/ola-s1-pro.html" class="btn btn-secondary">View Details</a>
-                    </div>
-                    <div class="bike-card" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiWDNuJSJ7NgZXhYexlNIB6_fIv_-CrnhiZg&s" alt="Electric Bike 3" loading="lazy">
-                        <h3>Ultraviolette F77</h3>
-                        <p>Ultraviolette Automotive</p>
-                        <span class="price">$4,999</span>
-                        <a href="bikes/details/ultraviolette-f77.html" class="btn btn-secondary">View Details</a>
+                    <p>Your ultimate destination for exploring and comparing motorcycles. Find your perfect ride with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section class="bike-section" data-aos="fade-up">
-            <div class="container text-center">
-                <h2 class="section-title">Why Choose Bikeloo?</h2>
-                <div class="about-content">
-                    <p>Bikeloo is your ultimate destination for all things motorcycles. We are passionate about bikes and dedicated to providing comprehensive, accurate, and up-to-date information to help you make informed decisions, whether you're a seasoned rider or a first-time buyer.</p>
-                    <ul class="why-choose-us-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>Detailed Specifications:</strong> In-depth information on every bike.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Unbiased Comparisons:</strong> Side-by-side analysis to help you decide.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Latest News & Reviews:</strong> Stay updated with the world of bikes.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>User-Friendly Interface:</strong> Easy navigation and powerful search.</li>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#bikes">All Bikes</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#compare">Compare</a></li>
+                        <li><a href="#news">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Sport Bikes</a></li>
+                        <li><a href="#">Cruisers</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Electric</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@bikeloo.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
                     </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Compare Bikes Teaser Section -->
-        <section class="compare-teaser-section" data-aos="zoom-in">
-            <div class="container text-center">
-                <h2 class="section-title">Compare Your Dream Bikes</h2>
-                <p>Find the perfect bike by comparing specifications side-by-side.</p>
-                <a href="compare.html" class="btn btn-primary">Compare Bikes Now</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BikeLoo. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">Bikeloo</a>
-                <p>Explore the world of bikes with detailed information, comparisons, and the latest news.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="bikes/all.html">All Bikes</a></li>
-                    <li><a href="bikes/brands/index.html">Brands</a></li>
-                    <li><a href="compare.html">Compare Bikes</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Bike Lane, Velocita City</p>
-                <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
-                <p><i class="fas fa-envelope"></i> info@bikeloo.com</p>
-            </div>
-            <div class="footer-social">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Bikeloo. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <!-- AOS.js -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
+    <script src="bikes-data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
