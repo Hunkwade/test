@@ -26,6 +26,52 @@ document.addEventListener('DOMContentLoaded', () => {
     renderBikes();
     initializeEventListeners();
     initializeScrollEffects();
+    
+    // Lazy load images for better performance
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+        
+        // Observe all images with data-src
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // Improve mobile performance
+    if (window.innerWidth <= 768) {
+        // Disable hover effects on mobile
+        document.body.classList.add('touch-device');
+    }
+    
+    // Handle orientation change
+    window.addEventListener('orientationchange', () => {
+        // Close mobile menu on orientation change
+        if (navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+        
+        // Recalculate viewport height for mobile
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+    
+    // Set initial viewport height
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
 // Event Listeners
@@ -45,6 +91,14 @@ function initializeEventListeners() {
     
     // Category filters
     document.querySelectorAll('.filter-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const category = card.dataset.category;
+            filterByCategory(category);
+        });
+    });
+    
+    // Mini category filters (hero section mobile)
+    document.querySelectorAll('.mini-category').forEach(card => {
         card.addEventListener('click', () => {
             const category = card.dataset.category;
             filterByCategory(category);
@@ -75,6 +129,17 @@ function initializeEventListeners() {
     // Mobile Menu
     menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        // Add animation to hamburger icon
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
     });
     
     // Close mobile menu when clicking a link
@@ -107,27 +172,75 @@ function initializeEventListeners() {
 
 // Scroll Effects
 function initializeScrollEffects() {
+    let lastScrollTop = 0;
+    let scrollTimer = null;
+    
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Basic scroll threshold
+        if (currentScroll > 100) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
+        
+        // Hide/show navbar on scroll (mobile only)
+        if (window.innerWidth <= 768) {
+            if (currentScroll > lastScrollTop && currentScroll > 300) {
+                // Scrolling down
+                navbar.classList.add('hide');
+            } else {
+                // Scrolling up
+                navbar.classList.remove('hide');
+            }
+        }
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        
+        // Hide scroll indicator after scrolling
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator && currentScroll > 200) {
+            scrollIndicator.style.opacity = '0';
+        } else if (scrollIndicator) {
+            scrollIndicator.style.opacity = '1';
+        }
+    }, { passive: true });
     
-    // Smooth scroll for nav links
+    // Smooth scroll for nav links with offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const navHeight = navbar.offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                if (navMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
             }
         });
     });
+    
+    // Add click handler for scroll indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            const bikesSection = document.getElementById('bikes');
+            if (bikesSection) {
+                bikesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 }
 
 // Filter and Sort Functions
@@ -515,10 +628,42 @@ function formatPrice(price) {
 
 function scrollToBikesSection() {
     const bikesSection = document.getElementById('bikes');
-    bikesSection.scrollIntoView({ behavior: 'smooth' });
+    if (bikesSection) {
+        const navHeight = navbar.offsetHeight;
+        const targetPosition = bikesSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
 }
+
+// Mobile menu overlay close
+function closeMobileMenu() {
+    navMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    const icon = menuToggle.querySelector('i');
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+}
+
+// Close mobile menu when clicking outside or on overlay
+document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active')) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            closeMobileMenu();
+        }
+        // Close when clicking on the overlay (::before pseudo-element area)
+        const menuRect = navMenu.getBoundingClientRect();
+        if (e.clientX > menuRect.right) {
+            closeMobileMenu();
+        }
+    }
+});
 
 // Make functions globally accessible
 window.toggleCompare = toggleCompare;
 window.openBikeDetails = openBikeDetails;
+window.closeMobileMenu = closeMobileMenu;
 
