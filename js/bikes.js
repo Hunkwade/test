@@ -1,123 +1,92 @@
 // ============================================
-// Bikes Page - Enhanced JavaScript
+// Bikes Page - Simplified (No Filters)
 // ============================================
 
-// DOM Elements
-const filterToggle = document.getElementById('filterToggle');
-const filterSidebar = document.getElementById('filterSidebar');
-const filterBackdrop = document.getElementById('filterBackdrop');
-const clearFilters = document.getElementById('clearFilters');
-const bikesGrid = document.querySelector('.bikes-grid');
-const bikeCards = document.querySelectorAll('.bike-card');
-const viewBtns = document.querySelectorAll('.view-btn');
-const sortSelect = document.getElementById('sortBy');
-const bikeCount = document.getElementById('bikeCount');
-
-// Filter elements
-const filterBrand = document.getElementById('filterBrand');
-const filterType = document.getElementById('filterType');
-const filterPrice = document.getElementById('filterPrice');
-const filterMileage = document.getElementById('filterMileage');
-
-// Mobile Filter Toggle
-if (filterToggle && filterSidebar) {
-    filterToggle.addEventListener('click', () => {
-        filterSidebar.classList.toggle('active');
-        filterToggle.classList.toggle('active');
-        if (filterBackdrop) filterBackdrop.classList.toggle('active');
-        
-        // Change icon
-        const icon = filterToggle.querySelector('i');
-        if (filterSidebar.classList.contains('active')) {
-            icon.classList.remove('fa-filter');
-            icon.classList.add('fa-times');
-            document.body.style.overflow = 'hidden'; // Prevent scroll
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-filter');
-            document.body.style.overflow = ''; // Restore scroll
-        }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Bikes page JavaScript initializing...');
     
-    // Close filter when clicking backdrop
-    if (filterBackdrop) {
-        filterBackdrop.addEventListener('click', () => {
-            filterSidebar.classList.remove('active');
-            filterToggle.classList.remove('active');
-            filterBackdrop.classList.remove('active');
-            const icon = filterToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-filter');
-            document.body.style.overflow = ''; // Restore scroll
+    // DOM Elements
+    const bikesGrid = document.querySelector('.bikes-grid');
+    const bikeCards = document.querySelectorAll('.bike-card');
+    const viewBtns = document.querySelectorAll('.view-btn');
+    const sortSelect = document.getElementById('sortBy');
+    const bikeCount = document.getElementById('bikeCount');
+    
+    console.log('Found elements:', {
+        bikeCards: bikeCards.length,
+        bikesGrid: !!bikesGrid,
+        viewBtns: viewBtns.length,
+        sortSelect: !!sortSelect
+    });
+
+
+    // View Toggle (Grid/List)
+    if (viewBtns.length > 0) {
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all
+                viewBtns.forEach(b => b.classList.remove('active'));
+                // Add active to clicked
+                btn.classList.add('active');
+                
+                const view = btn.dataset.view;
+                if (view === 'list' && bikesGrid) {
+                    bikesGrid.classList.add('list-view');
+                    bikesGrid.classList.remove('grid-view');
+                } else if (bikesGrid) {
+                    bikesGrid.classList.add('grid-view');
+                    bikesGrid.classList.remove('list-view');
+                }
+            });
         });
     }
-}
 
-// View Toggle (Grid/List)
-if (viewBtns.length > 0) {
-    viewBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active from all
-            viewBtns.forEach(b => b.classList.remove('active'));
-            // Add active to clicked
-            btn.classList.add('active');
+    // Filter Functionality
+    function applyFilters() {
+        const brandValue = filterBrand ? filterBrand.value.toLowerCase() : '';
+        const typeValue = filterType ? filterType.value.toLowerCase() : '';
+        const priceValue = filterPrice ? filterPrice.value : '';
+        const searchValue = bikeSearch ? bikeSearch.value.toLowerCase().trim() : '';
+        
+        let visibleCount = 0;
+        
+        bikeCards.forEach(card => {
+            const cardBrand = card.dataset.brand ? card.dataset.brand.toLowerCase() : '';
+            const cardType = card.dataset.type ? card.dataset.type.toLowerCase() : '';
+            const cardPrice = parseInt(card.dataset.price) || 0;
+            const cardName = card.querySelector('h3') ? card.querySelector('h3').textContent.toLowerCase() : '';
             
-            const view = btn.dataset.view;
-            if (view === 'list') {
-                bikesGrid.classList.add('list-view');
-                bikesGrid.classList.remove('grid-view');
-            } else {
-                bikesGrid.classList.add('grid-view');
-                bikesGrid.classList.remove('list-view');
+            let show = true;
+            
+            // Search filter
+            if (searchValue && !cardName.includes(searchValue) && !cardBrand.includes(searchValue)) {
+                show = false;
             }
-        });
-    });
-}
-
-// No Results Element
-const noResults = document.getElementById('noResults');
-const resetFiltersBtn = document.getElementById('resetFiltersBtn');
-
-// Filter Functionality
-function applyFilters() {
-    const brandValue = filterBrand ? filterBrand.value.toLowerCase() : '';
-    const typeValue = filterType ? filterType.value.toLowerCase() : '';
-    const priceValue = filterPrice ? filterPrice.value : '';
-    const mileageValue = filterMileage ? filterMileage.value : '';
-    
-    let visibleCount = 0;
-    
-    bikeCards.forEach(card => {
-        const cardBrand = card.dataset.brand ? card.dataset.brand.toLowerCase() : '';
-        const cardType = card.dataset.type ? card.dataset.type.toLowerCase() : '';
-        const cardPrice = parseInt(card.dataset.price) || 0;
-        
-        let show = true;
-        
-        // Brand filter
-        if (brandValue && cardBrand !== brandValue) {
-            show = false;
-        }
-        
-        // Type filter
-        if (typeValue && cardType !== typeValue) {
-            show = false;
-        }
-        
-        // Price filter
-        if (priceValue) {
-            if (priceValue.includes('-')) {
-                const [min, max] = priceValue.split('-').map(v => parseInt(v));
-                if (cardPrice < min || cardPrice > max) {
-                    show = false;
-                }
-            } else if (priceValue.includes('+')) {
-                const min = parseInt(priceValue.replace('+', ''));
-                if (cardPrice < min) {
-                    show = false;
+            
+            // Brand filter
+            if (brandValue && cardBrand !== brandValue) {
+                show = false;
+            }
+            
+            // Type filter
+            if (typeValue && cardType !== typeValue) {
+                show = false;
+            }
+            
+            // Price filter
+            if (priceValue) {
+                if (priceValue.includes('-')) {
+                    const [min, max] = priceValue.split('-').map(v => parseInt(v));
+                    if (cardPrice < min || cardPrice > max) {
+                        show = false;
+                    }
+                } else if (priceValue.includes('+')) {
+                    const min = parseInt(priceValue.replace('+', ''));
+                    if (cardPrice < min) {
+                        show = false;
+                    }
                 }
             }
-        }
         
         // Show/hide card with proper display
         if (show) {
@@ -175,11 +144,11 @@ function applyFilters() {
         document.body.style.overflow = ''; // Restore scroll
     }
     
-    console.log(`Filter applied: ${visibleCount} bikes visible`);
-}
+        console.log(`Filter applied: ${visibleCount} bikes visible`);
+    }
 
-// Sort Functionality
-function sortBikes() {
+    // Sort Functionality
+    function sortBikes() {
     const sortValue = sortSelect.value;
     const cardsArray = Array.from(bikeCards);
     
@@ -236,99 +205,90 @@ function sortBikes() {
         }, index * 50); // Stagger animation
     });
     
-    console.log(`Sorted by: ${sortValue}`);
-}
+        console.log(`Sorted by: ${sortValue}`);
+    }
 
-// Clear/Reset Filters Function
-function resetAllFilters() {
-    // Reset all selects
-    if (filterBrand) filterBrand.value = '';
-    if (filterType) filterType.value = '';
-    if (filterPrice) filterPrice.value = '';
-    if (filterMileage) filterMileage.value = '';
-    
-    // Reset all checkboxes
-    document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach(cb => {
-        cb.checked = false;
-    });
-    
-    // Show all bikes
-    bikeCards.forEach(card => {
-        card.style.removeProperty('display');
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-        card.style.transition = 'all 0.3s ease';
-    });
-    
-    // Update count
-    if (bikeCount) {
-        bikeCount.textContent = bikeCards.length;
+    // Clear/Reset Filters Function
+    function resetAllFilters() {
+        // Reset all selects
+        if (filterBrand) filterBrand.value = '';
+        if (filterType) filterType.value = '';
+        if (filterPrice) filterPrice.value = '';
+        if (bikeSearch) bikeSearch.value = '';
+        
+        // Show all bikes
+        bikeCards.forEach(card => {
+            card.style.removeProperty('display');
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+            card.style.transition = 'all 0.3s ease';
+        });
+        
+        // Update count
+        if (bikeCount) {
+            bikeCount.textContent = bikeCards.length;
+        }
+        
+        // Hide no results
+        if (noResults) {
+            noResults.style.display = 'none';
+        }
+        if (bikesGrid) {
+            bikesGrid.style.display = 'grid';
+        }
+        
+        console.log('Filters reset');
+    }
+
+    // Reset Filters from No Results
+    if (resetFiltersBtn) {
+        resetFiltersBtn.addEventListener('click', resetAllFilters);
     }
     
-    // Hide no results
-    if (noResults) {
-        noResults.style.display = 'none';
+    // Search functionality
+    if (bikeSearch) {
+        bikeSearch.addEventListener('input', (e) => {
+            console.log('Search value:', e.target.value);
+            applyFilters();
+        });
+        
+        // Clear search on ESC key
+        bikeSearch.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                bikeSearch.value = '';
+                applyFilters();
+            }
+        });
     }
-    if (bikesGrid) {
-        bikesGrid.style.display = 'grid';
+
+    // Event Listeners - with debug logging
+    if (filterBrand) {
+        filterBrand.addEventListener('change', (e) => {
+            console.log('Brand filter changed:', e.target.value);
+            applyFilters();
+        });
     }
-    
-    console.log('Filters reset');
-}
 
-// Clear Filters
-if (clearFilters) {
-    clearFilters.addEventListener('click', resetAllFilters);
-}
+    if (filterType) {
+        filterType.addEventListener('change', (e) => {
+            console.log('Type filter changed:', e.target.value);
+            applyFilters();
+        });
+    }
 
-// Reset Filters from No Results
-if (resetFiltersBtn) {
-    resetFiltersBtn.addEventListener('click', resetAllFilters);
-}
+    if (filterPrice) {
+        filterPrice.addEventListener('change', (e) => {
+            console.log('Price filter changed:', e.target.value);
+            applyFilters();
+        });
+    }
 
-// Event Listeners - with debug logging
-if (filterBrand) {
-    filterBrand.addEventListener('change', (e) => {
-        console.log('Brand filter changed:', e.target.value);
-        applyFilters();
-    });
-}
-
-if (filterType) {
-    filterType.addEventListener('change', (e) => {
-        console.log('Type filter changed:', e.target.value);
-        applyFilters();
-    });
-}
-
-if (filterPrice) {
-    filterPrice.addEventListener('change', (e) => {
-        console.log('Price filter changed:', e.target.value);
-        applyFilters();
-    });
-}
-
-if (filterMileage) {
-    filterMileage.addEventListener('change', (e) => {
-        console.log('Mileage filter changed:', e.target.value);
-        applyFilters();
-    });
-}
-
-if (sortSelect) {
-    sortSelect.addEventListener('change', (e) => {
-        console.log('Sort changed:', e.target.value);
-        sortBikes();
-    });
-}
-
-// Checkbox filters
-document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', (e) => {
-        console.log('Checkbox changed:', e.target.value, e.target.checked);
-        applyFilters();
-    });
-});
+    if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+            console.log('Sort changed:', e.target.value);
+            sortBikes();
+        });
+    }
 
 // Pagination functionality
 const paginationBtns = document.querySelectorAll('.pagination-btn');
@@ -437,8 +397,105 @@ function updateCompareButton() {
     }
 }
 
-// Initialize bikes with proper display
-document.addEventListener('DOMContentLoaded', () => {
+    // Pagination functionality
+    const paginationBtns = document.querySelectorAll('.pagination-btn');
+    if (paginationBtns.length > 0) {
+        paginationBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.disabled) return;
+                
+                // Remove active from all
+                paginationBtns.forEach(b => {
+                    if (!b.querySelector('i')) { // Not arrow buttons
+                        b.classList.remove('active');
+                    }
+                });
+                
+                // Add active to clicked (if not arrow button)
+                if (!this.querySelector('i')) {
+                    this.classList.add('active');
+                }
+                
+                // Scroll to top of listings
+                const bikesListing = document.querySelector('.bikes-listing');
+                if (bikesListing) {
+                    bikesListing.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    // Compare bike functionality
+    const compareButtons = document.querySelectorAll('.btn-icon');
+    let compareList = [];
+
+    if (compareButtons.length > 0) {
+        compareButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.bike-card');
+                if (!card) return;
+                
+                const bikeName = card.querySelector('h3').textContent;
+                
+                if (compareList.includes(bikeName)) {
+                    // Remove from compare
+                    compareList = compareList.filter(name => name !== bikeName);
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                    if (typeof showNotification === 'function') {
+                        showNotification(`${bikeName} removed from comparison`, 'info');
+                    }
+                } else {
+                    if (compareList.length >= 3) {
+                        if (typeof showNotification === 'function') {
+                            showNotification('You can compare up to 3 bikes only', 'error');
+                        } else {
+                            alert('You can compare up to 3 bikes only');
+                        }
+                        return;
+                    }
+                    // Add to compare
+                    compareList.push(bikeName);
+                    this.style.backgroundColor = 'var(--accent-red)';
+                    this.style.color = 'white';
+                    if (typeof showNotification === 'function') {
+                        showNotification(`${bikeName} added to comparison (${compareList.length}/3)`, 'success');
+                    }
+                }
+                
+                // Update compare button if exists
+                updateFloatingCompareButton();
+            });
+        });
+    }
+
+    function updateFloatingCompareButton() {
+        let compareBtn = document.getElementById('floatingCompare');
+        
+        if (compareList.length > 0) {
+            if (!compareBtn) {
+                compareBtn = document.createElement('a');
+                compareBtn.id = 'floatingCompare';
+                compareBtn.href = 'compare.html';
+                compareBtn.className = 'floating-compare-btn';
+                compareBtn.innerHTML = `
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Compare (${compareList.length})</span>
+                `;
+                document.body.appendChild(compareBtn);
+            } else {
+                compareBtn.querySelector('span').textContent = `Compare (${compareList.length})`;
+            }
+        } else {
+            if (compareBtn) {
+                compareBtn.remove();
+            }
+        }
+    }
+    
     // Ensure all bike cards are visible on load
     if (bikeCards) {
         bikeCards.forEach(card => {

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/page-common.css">
     <link rel="stylesheet" href="css/compare.css">
 </head>
 <body>
@@ -137,7 +138,17 @@
             
             <!-- Comparison Table -->
             <div class="comparison-table">
-                <h3>Detailed Comparison</h3>
+                <div class="table-header">
+                    <h3>Detailed Comparison</h3>
+                    <div class="table-actions">
+                        <button class="btn btn-secondary btn-sm" onclick="printComparison()">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                        <button class="btn btn-secondary btn-sm" onclick="shareComparison()">
+                            <i class="fas fa-share-alt"></i> Share
+                        </button>
+                    </div>
+                </div>
                 
                 <div class="table-responsive">
                     <table class="compare-table">
@@ -366,6 +377,7 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/compare.js"></script>
 </body>
 </html>
 

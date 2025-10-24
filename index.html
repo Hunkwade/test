@@ -35,6 +35,9 @@
                 Bike<span>loo</span>
             </a>
             
+            <!-- Menu Backdrop -->
+            <div class="menu-backdrop" id="menuBackdrop"></div>
+            
             <ul class="navbar-menu" id="navbarMenu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="bikes.html">Bikes</a></li>
@@ -60,8 +63,9 @@
             <p>Compare specifications, prices, and reviews from top brands</p>
             
             <div class="search-bar">
+                <i class="fas fa-search"></i>
                 <input type="text" id="heroSearch" placeholder="Search by brand, model, or type..." autocomplete="off">
-                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-primary" id="searchBtn">Search</button>
             </div>
             
             <div class="search-suggestions" id="searchSuggestions"></div>
@@ -137,7 +141,7 @@
                     <div class="bike-badge">
                         <span class="badge badge-primary">Popular</span>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=400&h=250&fit=crop" alt="Sport Bike" class="bike-img">
+                    <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=400&h=250&fit=crop" alt="Sport Bike" class="bike-img">
                     <div class="bike-info">
                         <h3>Yamaha R15 V4</h3>
                         <p class="bike-price">₹1.82 Lakh</p>
@@ -219,7 +223,7 @@
                     <div class="bike-badge">
                         <span class="badge badge-primary">Popular</span>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1591768575417-8a3dc8dc3a8f?w=400&h=250&fit=crop" alt="Sport Bike 2" class="bike-img">
+                    <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=400&h=250&fit=crop" alt="Sport Bike 2" class="bike-img">
                     <div class="bike-info">
                         <h3>KTM Duke 390</h3>
                         <p class="bike-price">₹3.02 Lakh</p>
@@ -269,24 +273,41 @@
             <p class="section-subtitle">Compare up to 3 bikes side by side</p>
             
             <div class="compare-container">
-                <div class="compare-slot">
+                <div class="compare-slot" id="compareSlot1" data-slot="1">
                     <i class="fas fa-plus-circle"></i>
                     <p>Select Bike 1</p>
                 </div>
                 <div class="compare-divider">VS</div>
-                <div class="compare-slot">
+                <div class="compare-slot" id="compareSlot2" data-slot="2">
                     <i class="fas fa-plus-circle"></i>
                     <p>Select Bike 2</p>
                 </div>
                 <div class="compare-divider">VS</div>
-                <div class="compare-slot">
+                <div class="compare-slot" id="compareSlot3" data-slot="3">
                     <i class="fas fa-plus-circle"></i>
                     <p>Select Bike 3</p>
                 </div>
             </div>
             
+            <!-- Bike Selection Modal -->
+            <div class="bike-selector-modal" id="bikeSelectorModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Select a Bike</h3>
+                        <button class="modal-close" id="modalClose">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="bike-selection-grid" id="bikeSelectionGrid">
+                            <!-- Bikes will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="text-center mt-3">
-                <a href="compare.html" class="btn btn-primary">Start Comparing</a>
+                <button class="btn btn-primary" id="startCompareBtn" disabled>Start Comparing</button>
             </div>
         </div>
     </section>

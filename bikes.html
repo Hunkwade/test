@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/page-common.css">
     <link rel="stylesheet" href="css/bikes.css">
 </head>
 <body>
@@ -62,99 +63,17 @@
 
     <!-- Bikes Listing Section -->
     <section class="section bikes-listing">
-        <div class="container-fluid">
-            <!-- Mobile Filter Toggle -->
-            <button class="filter-toggle" id="filterToggle">
-                <i class="fas fa-filter"></i> Filters
-            </button>
-            
-            <!-- Filter Backdrop -->
-            <div class="filter-backdrop" id="filterBackdrop"></div>
-            
-            <div class="listing-container">
-                <!-- Filter Sidebar -->
-                <aside class="filter-sidebar" id="filterSidebar">
-                    <div class="filter-header">
-                        <h3>Filters</h3>
-                        <button class="btn-text" id="clearFilters">Clear All</button>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h4>Brand</h4>
-                        <select id="filterBrand" class="filter-select">
-                            <option value="">All Brands</option>
-                            <option value="honda">Honda</option>
-                            <option value="yamaha">Yamaha</option>
-                            <option value="royal-enfield">Royal Enfield</option>
-                            <option value="ktm">KTM</option>
-                            <option value="bajaj">Bajaj</option>
-                            <option value="tvs">TVS</option>
-                            <option value="suzuki">Suzuki</option>
-                            <option value="hero">Hero</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h4>Type</h4>
-                        <select id="filterType" class="filter-select">
-                            <option value="">All Types</option>
-                            <option value="sports">Sports</option>
-                            <option value="electric">Electric</option>
-                            <option value="cruiser">Cruiser</option>
-                            <option value="commuter">Commuter</option>
-                            <option value="adventure">Adventure</option>
-                            <option value="scooter">Scooter</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h4>Price Range</h4>
-                        <select id="filterPrice" class="filter-select">
-                            <option value="">All Prices</option>
-                            <option value="0-50000">Under ₹50,000</option>
-                            <option value="50000-100000">₹50,000 - ₹1,00,000</option>
-                            <option value="100000-200000">₹1,00,000 - ₹2,00,000</option>
-                            <option value="200000-500000">₹2,00,000 - ₹5,00,000</option>
-                            <option value="500000+">Above ₹5,00,000</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h4>Mileage</h4>
-                        <select id="filterMileage" class="filter-select">
-                            <option value="">All Mileage</option>
-                            <option value="60+">60+ km/l</option>
-                            <option value="40-60">40-60 km/l</option>
-                            <option value="30-40">30-40 km/l</option>
-                            <option value="0-30">Below 30 km/l</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h4>Engine Capacity</h4>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" value="0-125"> 0-125cc</label>
-                            <label><input type="checkbox" value="125-250"> 125-250cc</label>
-                            <label><input type="checkbox" value="250-500"> 250-500cc</label>
-                            <label><input type="checkbox" value="500+"> 500cc+</label>
-                        </div>
-                    </div>
-                </aside>
-                
-                <!-- Bikes Grid -->
-                <main class="bikes-content">
+        <div class="container">
+            <!-- Bikes Grid -->
+            <main class="bikes-content">
                     <div class="bikes-toolbar">
-                        <div class="results-count">
-                            <p>Showing <strong id="bikeCount">9</strong> of <strong>24</strong> bikes</p>
+                        <div class="toolbar-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="bikeSearchBar" placeholder="Search bikes by name or brand..." autocomplete="off">
                         </div>
-                        <div class="toolbar-actions">
-                            <div class="view-toggle">
-                                <button class="view-btn active" data-view="grid" title="Grid View">
-                                    <i class="fas fa-th"></i>
-                                </button>
-                                <button class="view-btn" data-view="list" title="List View">
-                                    <i class="fas fa-list"></i>
-                                </button>
+                        <div class="toolbar-right">
+                            <div class="results-count">
+                                <p>Showing <strong id="bikeCount">9</strong> bikes</p>
                             </div>
                             <div class="sort-options">
                                 <label for="sortBy">Sort:</label>
@@ -167,14 +86,6 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- No Results Message -->
-                    <div class="no-results" id="noResults" style="display: none;">
-                        <i class="fas fa-search"></i>
-                        <h3>No bikes found</h3>
-                        <p>Try adjusting your filters to see more results</p>
-                        <button class="btn btn-primary" id="resetFiltersBtn">Reset Filters</button>
                     </div>
                     
                     <div class="bikes-grid">
@@ -371,7 +282,6 @@
                         <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </main>
-            </div>
         </div>
     </section>
 
@@ -433,7 +343,7 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script src="js/bikes.js"></script>
+    <script src="js/bikes-simple.js"></script>
 </body>
 </html>
 
