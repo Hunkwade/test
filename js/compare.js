@@ -190,11 +190,13 @@ function updateBikePreview(slotNumber, bikeId) {
     if (!previewElement) return;
     
     if (!bikeId || !bikesDatabase[bikeId]) {
+        previewElement.style.display = 'none';
         previewElement.innerHTML = '<p class="no-selection">No bike selected</p>';
         return;
     }
     
     const bike = bikesDatabase[bikeId];
+    previewElement.style.display = 'block';
     previewElement.innerHTML = `
         <img src="${bike.image}" alt="${bike.name}">
         <h4>${bike.name}</h4>
@@ -212,42 +214,199 @@ function updateComparisonTable() {
     const bike2 = bikesDatabase[bike2Id];
     const bike3 = bikesDatabase[bike3Id];
     
-    // Update table based on selected bikes
-    const compareTable = document.querySelector('.compare-table');
+    // Check if any bikes are selected
+    const hasSelectedBikes = bike1Id || bike2Id || bike3Id;
+    
+    // Show/hide empty state and comparison table
+    const emptyState = document.getElementById('emptyState');
+    const comparisonTable = document.getElementById('comparisonTable');
+    
+    if (hasSelectedBikes) {
+        if (emptyState) emptyState.style.display = 'none';
+        if (comparisonTable) comparisonTable.style.display = 'block';
+        
+        // Generate comparison table content
+        generateComparisonTable(bike1, bike2, bike3);
+    } else {
+        if (emptyState) emptyState.style.display = 'block';
+        if (comparisonTable) comparisonTable.style.display = 'none';
+    }
+}
+
+// Generate the comparison table dynamically
+function generateComparisonTable(bike1, bike2, bike3) {
+    const compareTable = document.getElementById('compareTable');
     if (!compareTable) return;
     
-    // Find all better values and highlight them
-    highlightBetterValues(bike1, bike2, bike3);
+    // Clear existing content
+    compareTable.innerHTML = '';
     
-    // Update table content
-    updateTableRow('Price', [bike1?.price, bike2?.price, bike3?.price]);
-    updateTableRow('Type', [bike1?.type, bike2?.type, bike3?.type]);
-    updateTableRow('Brand', [bike1?.brand, bike2?.brand, bike3?.brand]);
+    // Create table structure
+    const tableHTML = `
+        <!-- Price & General -->
+        <thead>
+            <tr class="category-row">
+                <th colspan="4">Price & General</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="spec-label">Price</td>
+                <td>${bike1?.price || '-'}</td>
+                <td>${bike2?.price || '-'}</td>
+                <td>${bike3?.price || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Type</td>
+                <td>${bike1?.type || '-'}</td>
+                <td>${bike2?.type || '-'}</td>
+                <td>${bike3?.type || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Brand</td>
+                <td>${bike1?.brand || '-'}</td>
+                <td>${bike2?.brand || '-'}</td>
+                <td>${bike3?.brand || '-'}</td>
+            </tr>
+        </tbody>
+        
+        <!-- Engine & Performance -->
+        <thead>
+            <tr class="category-row">
+                <th colspan="4">Engine & Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="spec-label">Engine Capacity</td>
+                <td>${bike1?.specs?.engine || '-'}</td>
+                <td>${bike2?.specs?.engine || '-'}</td>
+                <td>${bike3?.specs?.engine || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Max Power</td>
+                <td>${bike1?.specs?.power || '-'}</td>
+                <td>${bike2?.specs?.power || '-'}</td>
+                <td>${bike3?.specs?.power || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Max Torque</td>
+                <td>${bike1?.specs?.torque || '-'}</td>
+                <td>${bike2?.specs?.torque || '-'}</td>
+                <td>${bike3?.specs?.torque || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Transmission</td>
+                <td>${bike1?.specs?.transmission || '-'}</td>
+                <td>${bike2?.specs?.transmission || '-'}</td>
+                <td>${bike3?.specs?.transmission || '-'}</td>
+            </tr>
+        </tbody>
+        
+        <!-- Mileage & Fuel -->
+        <thead>
+            <tr class="category-row">
+                <th colspan="4">Mileage & Fuel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="spec-label">Mileage</td>
+                <td>${bike1?.specs?.mileage || '-'}</td>
+                <td>${bike2?.specs?.mileage || '-'}</td>
+                <td>${bike3?.specs?.mileage || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Fuel Tank</td>
+                <td>${bike1?.specs?.fuelTank || '-'}</td>
+                <td>${bike2?.specs?.fuelTank || '-'}</td>
+                <td>${bike3?.specs?.fuelTank || '-'}</td>
+            </tr>
+        </tbody>
+        
+        <!-- Dimensions & Weight -->
+        <thead>
+            <tr class="category-row">
+                <th colspan="4">Dimensions & Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="spec-label">Kerb Weight</td>
+                <td>${bike1?.specs?.weight || '-'}</td>
+                <td>${bike2?.specs?.weight || '-'}</td>
+                <td>${bike3?.specs?.weight || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Ground Clearance</td>
+                <td>${bike1?.specs?.groundClearance || '-'}</td>
+                <td>${bike2?.specs?.groundClearance || '-'}</td>
+                <td>${bike3?.specs?.groundClearance || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Wheelbase</td>
+                <td>${bike1?.specs?.wheelbase || '-'}</td>
+                <td>${bike2?.specs?.wheelbase || '-'}</td>
+                <td>${bike3?.specs?.wheelbase || '-'}</td>
+            </tr>
+        </tbody>
+        
+        <!-- Brakes & Suspension -->
+        <thead>
+            <tr class="category-row">
+                <th colspan="4">Brakes & Suspension</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="spec-label">Front Brake</td>
+                <td>${bike1?.specs?.frontBrake || '-'}</td>
+                <td>${bike2?.specs?.frontBrake || '-'}</td>
+                <td>${bike3?.specs?.frontBrake || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Rear Brake</td>
+                <td>${bike1?.specs?.rearBrake || '-'}</td>
+                <td>${bike2?.specs?.rearBrake || '-'}</td>
+                <td>${bike3?.specs?.rearBrake || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">ABS</td>
+                <td>${bike1?.specs?.abs || '-'}</td>
+                <td>${bike2?.specs?.abs || '-'}</td>
+                <td>${bike3?.specs?.abs || '-'}</td>
+            </tr>
+        </tbody>
+        
+        <!-- Features -->
+        <thead>
+            <tr class="category-row">
+                <th colspan="4">Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="spec-label">Digital Console</td>
+                <td>${bike1?.specs?.digitalConsole || '-'}</td>
+                <td>${bike2?.specs?.digitalConsole || '-'}</td>
+                <td>${bike3?.specs?.digitalConsole || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">LED Lights</td>
+                <td>${bike1?.specs?.ledLights || '-'}</td>
+                <td>${bike2?.specs?.ledLights || '-'}</td>
+                <td>${bike3?.specs?.ledLights || '-'}</td>
+            </tr>
+            <tr>
+                <td class="spec-label">Bluetooth</td>
+                <td>${bike1?.specs?.bluetooth || '-'}</td>
+                <td>${bike2?.specs?.bluetooth || '-'}</td>
+                <td>${bike3?.specs?.bluetooth || '-'}</td>
+            </tr>
+        </tbody>
+    `;
     
-    // Engine & Performance
-    updateTableRow('Engine Capacity', [bike1?.specs.engine, bike2?.specs.engine, bike3?.specs.engine]);
-    updateTableRow('Max Power', [bike1?.specs.power, bike2?.specs.power, bike3?.specs.power]);
-    updateTableRow('Max Torque', [bike1?.specs.torque, bike2?.specs.torque, bike3?.specs.torque]);
-    updateTableRow('Transmission', [bike1?.specs.transmission, bike2?.specs.transmission, bike3?.specs.transmission]);
-    
-    // Mileage & Fuel
-    updateTableRow('Mileage', [bike1?.specs.mileage, bike2?.specs.mileage, bike3?.specs.mileage]);
-    updateTableRow('Fuel Tank', [bike1?.specs.fuelTank, bike2?.specs.fuelTank, bike3?.specs.fuelTank]);
-    
-    // Dimensions & Weight
-    updateTableRow('Kerb Weight', [bike1?.specs.weight, bike2?.specs.weight, bike3?.specs.weight]);
-    updateTableRow('Ground Clearance', [bike1?.specs.groundClearance, bike2?.specs.groundClearance, bike3?.specs.groundClearance]);
-    updateTableRow('Wheelbase', [bike1?.specs.wheelbase, bike2?.specs.wheelbase, bike3?.specs.wheelbase]);
-    
-    // Brakes
-    updateTableRow('Front Brake', [bike1?.specs.frontBrake, bike2?.specs.frontBrake, bike3?.specs.frontBrake]);
-    updateTableRow('Rear Brake', [bike1?.specs.rearBrake, bike2?.specs.rearBrake, bike3?.specs.rearBrake]);
-    updateTableRow('ABS', [bike1?.specs.abs, bike2?.specs.abs, bike3?.specs.abs]);
-    
-    // Features
-    updateTableRow('Digital Console', [bike1?.specs.digitalConsole, bike2?.specs.digitalConsole, bike3?.specs.digitalConsole]);
-    updateTableRow('LED Lights', [bike1?.specs.ledLights, bike2?.specs.ledLights, bike3?.specs.ledLights]);
-    updateTableRow('Bluetooth', [bike1?.specs.bluetooth, bike2?.specs.bluetooth, bike3?.specs.bluetooth]);
+    compareTable.innerHTML = tableHTML;
 }
 
 function updateTableRow(label, values) {
@@ -334,12 +493,10 @@ if (urlBike3 && bike3Select) {
     console.log('Loaded Bike 3:', urlBike3);
 }
 
-// Initial table update
+// Initial state - show empty state by default
 setTimeout(() => {
-    if (bike1Select?.value || bike2Select?.value || bike3Select?.value) {
-        updateComparisonTable();
-        console.log('Comparison table updated');
-    }
+    updateComparisonTable();
+    console.log('Compare page initialized with empty state');
 }, 100);
 
 console.log('Compare Page - Initialized successfully!');

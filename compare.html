@@ -42,6 +42,7 @@
                 <li><a href="brands.html">Brands</a></li>
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="news.html">News</a></li>
+                <li><a href="emi-calculator.html">EMI Calculator</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             
@@ -76,16 +77,16 @@
                     <select class="bike-select" id="bike1Select">
                         <option value="">Select Bike 1</option>
                         <option value="yamaha-r15">Yamaha R15 V4</option>
-                        <option value="ktm-duke-390" selected>KTM Duke 390</option>
+                        <option value="ktm-duke-390">KTM Duke 390</option>
                         <option value="royal-enfield-classic">Royal Enfield Classic 350</option>
                         <option value="honda-activa">Honda Activa 6G</option>
                         <option value="bajaj-dominar">Bajaj Dominar 400</option>
                         <option value="ola-electric">Ola Electric S1 Pro</option>
                     </select>
-                    <div class="selected-bike" id="selectedBike1">
-                        <img src="https://images.unsplash.com/photo-1591768575417-8a3dc8dc3a8f?w=400&h=250&fit=crop" alt="KTM Duke 390">
-                        <h4>KTM Duke 390</h4>
-                        <p class="price">₹3.02 Lakh</p>
+                    <div class="selected-bike" id="selectedBike1" style="display: none;">
+                        <img src="" alt="">
+                        <h4></h4>
+                        <p class="price"></p>
                     </div>
                 </div>
                 
@@ -98,17 +99,17 @@
                     </div>
                     <select class="bike-select" id="bike2Select">
                         <option value="">Select Bike 2</option>
-                        <option value="yamaha-r15" selected>Yamaha R15 V4</option>
+                        <option value="yamaha-r15">Yamaha R15 V4</option>
                         <option value="ktm-duke-390">KTM Duke 390</option>
                         <option value="royal-enfield-classic">Royal Enfield Classic 350</option>
                         <option value="honda-activa">Honda Activa 6G</option>
                         <option value="bajaj-dominar">Bajaj Dominar 400</option>
                         <option value="ola-electric">Ola Electric S1 Pro</option>
                     </select>
-                    <div class="selected-bike" id="selectedBike2">
-                        <img src="https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=400&h=250&fit=crop" alt="Yamaha R15 V4">
-                        <h4>Yamaha R15 V4</h4>
-                        <p class="price">₹1.82 Lakh</p>
+                    <div class="selected-bike" id="selectedBike2" style="display: none;">
+                        <img src="" alt="">
+                        <h4></h4>
+                        <p class="price"></p>
                     </div>
                 </div>
                 
@@ -125,19 +126,19 @@
                         <option value="ktm-duke-390">KTM Duke 390</option>
                         <option value="royal-enfield-classic">Royal Enfield Classic 350</option>
                         <option value="honda-activa">Honda Activa 6G</option>
-                        <option value="bajaj-dominar" selected>Bajaj Dominar 400</option>
+                        <option value="bajaj-dominar">Bajaj Dominar 400</option>
                         <option value="ola-electric">Ola Electric S1 Pro</option>
                     </select>
-                    <div class="selected-bike" id="selectedBike3">
-                        <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=400&h=250&fit=crop" alt="Bajaj Dominar 400">
-                        <h4>Bajaj Dominar 400</h4>
-                        <p class="price">₹2.30 Lakh</p>
+                    <div class="selected-bike" id="selectedBike3" style="display: none;">
+                        <img src="" alt="">
+                        <h4></h4>
+                        <p class="price"></p>
                     </div>
                 </div>
             </div>
             
             <!-- Comparison Table -->
-            <div class="comparison-table">
+            <div class="comparison-table" id="comparisonTable" style="display: none;">
                 <div class="table-header">
                     <h3>Detailed Comparison</h3>
                     <div class="table-actions">
@@ -151,169 +152,18 @@
                 </div>
                 
                 <div class="table-responsive">
-                    <table class="compare-table">
-                        <!-- Price & General -->
-                        <thead>
-                            <tr class="category-row">
-                                <th colspan="4">Price & General</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="spec-label">Price</td>
-                                <td>₹3.02 Lakh</td>
-                                <td class="highlight-better">₹1.82 Lakh</td>
-                                <td>₹2.30 Lakh</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Type</td>
-                                <td>Sports</td>
-                                <td>Sports</td>
-                                <td>Adventure</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Brand</td>
-                                <td>KTM</td>
-                                <td>Yamaha</td>
-                                <td>Bajaj</td>
-                            </tr>
-                        </tbody>
-                        
-                        <!-- Engine & Performance -->
-                        <thead>
-                            <tr class="category-row">
-                                <th colspan="4">Engine & Performance</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="spec-label">Engine Capacity</td>
-                                <td class="highlight-better">373cc</td>
-                                <td>155cc</td>
-                                <td class="highlight-better">373cc</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Max Power</td>
-                                <td class="highlight-better">43.5 bhp</td>
-                                <td>18.4 bhp</td>
-                                <td>40 bhp</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Max Torque</td>
-                                <td class="highlight-better">37 Nm</td>
-                                <td>14.2 Nm</td>
-                                <td>35 Nm</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Transmission</td>
-                                <td>6-Speed</td>
-                                <td>6-Speed</td>
-                                <td>6-Speed</td>
-                            </tr>
-                        </tbody>
-                        
-                        <!-- Mileage & Fuel -->
-                        <thead>
-                            <tr class="category-row">
-                                <th colspan="4">Mileage & Fuel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="spec-label">Mileage</td>
-                                <td>30 km/l</td>
-                                <td class="highlight-better">40 km/l</td>
-                                <td>27 km/l</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Fuel Tank</td>
-                                <td>13.4 L</td>
-                                <td>11 L</td>
-                                <td class="highlight-better">13 L</td>
-                            </tr>
-                        </tbody>
-                        
-                        <!-- Dimensions & Weight -->
-                        <thead>
-                            <tr class="category-row">
-                                <th colspan="4">Dimensions & Weight</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="spec-label">Kerb Weight</td>
-                                <td>172 kg</td>
-                                <td class="highlight-better">142 kg</td>
-                                <td>187 kg</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Ground Clearance</td>
-                                <td>185 mm</td>
-                                <td>155 mm</td>
-                                <td class="highlight-better">173 mm</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Wheelbase</td>
-                                <td>1,357 mm</td>
-                                <td>1,325 mm</td>
-                                <td class="highlight-better">1,453 mm</td>
-                            </tr>
-                        </tbody>
-                        
-                        <!-- Brakes -->
-                        <thead>
-                            <tr class="category-row">
-                                <th colspan="4">Brakes & Suspension</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="spec-label">Front Brake</td>
-                                <td class="highlight-better">320mm Disc</td>
-                                <td>282mm Disc</td>
-                                <td>320mm Disc</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Rear Brake</td>
-                                <td>230mm Disc</td>
-                                <td>220mm Disc</td>
-                                <td class="highlight-better">230mm Disc</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">ABS</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                            </tr>
-                        </tbody>
-                        
-                        <!-- Features -->
-                        <thead>
-                            <tr class="category-row">
-                                <th colspan="4">Features</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="spec-label">Digital Console</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">LED Lights</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td class="spec-label">Bluetooth</td>
-                                <td>Yes</td>
-                                <td>Yes</td>
-                                <td>No</td>
-                            </tr>
-                        </tbody>
+                    <table class="compare-table" id="compareTable">
+                        <!-- Table content will be populated by JavaScript -->
                     </table>
+                </div>
+            </div>
+            
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <div class="empty-state-content">
+                    <i class="fas fa-search"></i>
+                    <h3>Select Bikes to Compare</h3>
+                    <p>Choose up to 3 bikes from the dropdowns above to see a detailed comparison</p>
                 </div>
             </div>
         </div>
