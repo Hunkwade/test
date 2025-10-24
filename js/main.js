@@ -15,59 +15,21 @@ window.addEventListener('load', () => {
     }
 });
 
-// Mobile Menu Toggle - Enhanced
+// Mobile Menu Toggle
 const menuToggle = document.getElementById('menuToggle');
 const navbarMenu = document.getElementById('navbarMenu');
-const menuBackdrop = document.getElementById('menuBackdrop');
 
 if (menuToggle && navbarMenu) {
-    menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isActive = navbarMenu.classList.contains('active');
-        
-        if (isActive) {
-            // Close menu
-            navbarMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-            if (menuBackdrop) menuBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
-        } else {
-            // Open menu
-            navbarMenu.classList.add('active');
-            menuToggle.classList.add('active');
-            if (menuBackdrop) menuBackdrop.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking backdrop
-    if (menuBackdrop) {
-        menuBackdrop.addEventListener('click', () => {
-            navbarMenu.classList.remove('active');
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navbarMenu.contains(e.target)) {
             menuToggle.classList.remove('active');
-            menuBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-    
-    // Close menu when clicking a link
-    const menuLinks = navbarMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
             navbarMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-            if (menuBackdrop) menuBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-    
-    // Close menu on ESC key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navbarMenu.classList.contains('active')) {
-            navbarMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-            if (menuBackdrop) menuBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
         }
     });
 }
