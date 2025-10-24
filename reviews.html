@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Read user and expert reviews of bikes. Share your bike experience on Bikeloo.">
-    <title>Bike Reviews - Bikeloo</title>
+    <meta name="description" content="Read user and expert reviews of bikes. Share your bike experience on BikeLoo.">
+    <title>Bike Reviews - BikeLoo</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
         <div class="navbar-container">
             <a href="index.html" class="navbar-logo">
                 <i class="fas fa-motorcycle"></i>
-                Bike<span>loo</span>
+                Bike<span>Loo</span>
             </a>
             
             <ul class="navbar-menu" id="navbarMenu">
@@ -42,6 +42,7 @@
                 <li><a href="brands.html">Brands</a></li>
                 <li><a href="reviews.html" class="active">Reviews</a></li>
                 <li><a href="news.html">News</a></li>
+                <li><a href="emi-calculator.html">EMI Calculator</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             
@@ -69,25 +70,29 @@
                 <aside class="reviews-filter">
                     <h3>Filter Reviews</h3>
                     <div class="filter-group">
-                        <label>Bike Brand</label>
-                        <select>
+                        <label for="filterBrand">Bike Brand</label>
+                        <select id="filterBrand">
                             <option value="">All Brands</option>
                             <option value="honda">Honda</option>
                             <option value="yamaha">Yamaha</option>
                             <option value="ktm">KTM</option>
                             <option value="royal-enfield">Royal Enfield</option>
+                            <option value="bajaj">Bajaj</option>
+                            <option value="ola">Ola</option>
                         </select>
                     </div>
                     
                     <div class="filter-group">
-                        <label>Rating</label>
-                        <select>
+                        <label for="filterRating">Rating</label>
+                        <select id="filterRating">
                             <option value="">All Ratings</option>
                             <option value="5">5 Stars</option>
                             <option value="4">4 Stars & Up</option>
                             <option value="3">3 Stars & Up</option>
                         </select>
                     </div>
+                    
+                    <button class="btn btn-secondary" id="resetFilters">Reset Filters</button>
                 </aside>
                 
                 <!-- Reviews List -->
@@ -199,46 +204,20 @@
                         </div>
                     </div>
                     
-                    <!-- Review Form -->
-                    <div class="review-form" id="reviewForm" style="display: none;">
+                    <!-- Review Form Section -->
+                    <div class="review-form" id="reviewFormSection" style="display: none;">
                         <h3>Write Your Review</h3>
-                        <form id="submitReviewForm">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="reviewName">Your Name *</label>
-                                    <input type="text" id="reviewName" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="reviewBike">Bike Model *</label>
-                                    <input type="text" id="reviewBike" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="reviewRating">Rating *</label>
-                                <select id="reviewRating" required>
-                                    <option value="">Select Rating</option>
-                                    <option value="5">5 Stars - Excellent</option>
-                                    <option value="4">4 Stars - Very Good</option>
-                                    <option value="3">3 Stars - Good</option>
-                                    <option value="2">2 Stars - Average</option>
-                                    <option value="1">1 Star - Poor</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="reviewTitle">Review Title *</label>
-                                <input type="text" id="reviewTitle" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="reviewText">Your Review *</label>
-                                <textarea id="reviewText" rows="6" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">Submit Review</button>
-                        </form>
+                        <p class="form-description">Share your experience with other riders. Click the button below to open our Google Form and submit your review.</p>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" id="googleFormBtn">
+                                <i class="fab fa-google"></i> Open Google Form
+                            </button>
+                        </div>
+                        
+                        <div class="form-note">
+                            <p><i class="fas fa-info-circle"></i> Your review will be published after moderation. Please be honest and respectful in your feedback.</p>
+                        </div>
                     </div>
                 </main>
             </div>
@@ -250,7 +229,7 @@
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About Bikeloo</h3>
+                    <h3>About BikeLoo</h3>
                     <p>Your ultimate destination for bike information, comparisons, and reviews. Find the perfect bike for your needs.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -291,7 +270,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Bikeloo. All rights reserved. Made with <i class="fas fa-heart" style="color: #ff3b30;"></i> for bike enthusiasts.</p>
+                <p>&copy; 2025 BikeLoo. All rights reserved. Made with <i class="fas fa-heart" style="color: #ff3b30;"></i> for bike enthusiasts.</p>
             </div>
         </div>
     </footer>

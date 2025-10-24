@@ -1,5 +1,5 @@
 // ============================================
-// Bikeloo - Main JavaScript
+// BikeLoo - Main JavaScript
 // ============================================
 
 // Loading Animation
@@ -61,18 +61,18 @@ const searchBtn = document.getElementById('searchBtn');
 
 // Bike data with details for search
 const bikeData = [
-    { name: 'Yamaha R15 V4', brand: 'Yamaha', type: 'Sports', price: '₹1.82 Lakh', image: 'https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=80&h=60&fit=crop' },
-    { name: 'Ola Electric S1 Pro', brand: 'Ola', type: 'Electric', price: '₹1.30 Lakh', image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=80&h=60&fit=crop' },
-    { name: 'Royal Enfield Classic 350', brand: 'Royal Enfield', type: 'Cruiser', price: '₹1.93 Lakh', image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=80&h=60&fit=crop' },
-    { name: 'Honda Activa 6G', brand: 'Honda', type: 'Scooter', price: '₹74,536', image: 'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=80&h=60&fit=crop' },
-    { name: 'KTM Duke 390', brand: 'KTM', type: 'Sports', price: '₹3.02 Lakh', image: 'https://images.unsplash.com/photo-1591768575417-8a3dc8dc3a8f?w=80&h=60&fit=crop' },
-    { name: 'Bajaj Dominar 400', brand: 'Bajaj', type: 'Adventure', price: '₹2.30 Lakh', image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=80&h=60&fit=crop' },
-    { name: 'Suzuki Gixxer', brand: 'Suzuki', type: 'Sports', price: '₹1.25 Lakh', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=60&fit=crop' },
-    { name: 'TVS Apache RTR 160', brand: 'TVS', type: 'Sports', price: '₹1.16 Lakh', image: 'https://images.unsplash.com/photo-1568772585286-f59e2f37daa5?w=80&h=60&fit=crop' },
-    { name: 'Hero Splendor Plus', brand: 'Hero', type: 'Commuter', price: '₹67,000', image: 'https://images.unsplash.com/photo-1558980663-3685c1d673c4?w=80&h=60&fit=crop' },
-    { name: 'Kawasaki Ninja 300', brand: 'Kawasaki', type: 'Sports', price: '₹3.43 Lakh', image: 'https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=80&h=60&fit=crop' },
-    { name: 'Harley Davidson Street 750', brand: 'Harley Davidson', type: 'Cruiser', price: '₹5.34 Lakh', image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=80&h=60&fit=crop' },
-    { name: 'Ducati Panigale V2', brand: 'Ducati', type: 'Sports', price: '₹17.50 Lakh', image: 'https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=80&h=60&fit=crop' }
+    { name: 'Yamaha R15 V4', brand: 'Yamaha', type: 'Sports', price: '₹1.82 Lakh', image: 'https://cdn.bikedekho.com/processedimages/yamaha/r15-v4/source/r15-v468bbb5ab2b458.jpg?imwidth=412&impolicy=resize' },
+    { name: 'Ola Electric S1 Pro', brand: 'Ola', type: 'Electric', price: '₹1.30 Lakh', image: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/197219/s1-pro-left-side-view.jpeg?isig=0' },
+    { name: 'Royal Enfield Classic 350', brand: 'Royal Enfield', type: 'Cruiser', price: '₹1.93 Lakh', image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/183389/classic-350-right-front-three-quarter-2.jpeg?isig=0&q=80' },
+    { name: 'Honda Activa 6G', brand: 'Honda', type: 'Scooter', price: '₹74,536', image: 'https://imgd.aeplcdn.com/642x361/n/cw/ec/158667/honda-activa-6g-right-side-view1.jpeg?isig=0&q=75' },
+    { name: 'KTM Duke 390', brand: 'KTM', type: 'Sports', price: '₹3.02 Lakh', image: 'https://cdn.bikedekho.com/processedimages/ktm/2021-390-duke/source/2021-390-duke67d19c0d0c17b.jpg?imwidth=412&impolicy=resize' },
+    { name: 'Bajaj Dominar 400', brand: 'Bajaj', type: 'Adventure', price: '₹2.30 Lakh', image: 'https://kaydeeauto.in/cdn/shop/files/BajajDominar400BS6-1_9499c99b-1b35-4198-b481-edf62b727900.png?v=1709361373&width=1445' },
+    { name: 'Suzuki Gixxer', brand: 'Suzuki', type: 'Sports', price: '₹1.25 Lakh', image: 'https://imgd.aeplcdn.com/664x374/n/bw/models/colors/suzuki-select-model-metallic-triton-blue-1671516782463.png?q=80' },
+    { name: 'TVS Apache RTR 160', brand: 'TVS', type: 'Sports', price: '₹1.16 Lakh', image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/tvs-apache-160-rm-drum-black-edition1732629216165.jpg?q=80' },
+    { name: 'Hero Splendor Plus', brand: 'Hero', type: 'Commuter', price: '₹67,000', image: 'https://imgd.aeplcdn.com/664x374/n/bw/models/colors/hero-select-model-blue-black-1706531445236.png?q=80' },
+    { name: 'Kawasaki Ninja 300', brand: 'Kawasaki', type: 'Sports', price: '₹3.43 Lakh', image: 'https://imgd.aeplcdn.com/1056x594/n/w4oelgb_1848768.avif?q=80' },
+    { name: 'Harley Davidson Street 750', brand: 'Harley Davidson', type: 'Cruiser', price: '₹5.34 Lakh', image: 'https://imgd.aeplcdn.com/1056x594/n/09bn0hb_1863512.jpg?q=80' },
+    { name: 'Ducati Panigale V2', brand: 'Ducati', type: 'Sports', price: '₹17.50 Lakh', image: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/49828/panigale-v2-right-side-view.png?isig=0' }
 ];
 
 // Function to navigate to bike details
@@ -373,15 +373,15 @@ let currentSlot = null;
 
 // Bikes available for quick compare - MUST match compare.js database IDs
 const quickCompareBikes = [
-    { id: 'yamaha-r15', name: 'Yamaha R15 V4', price: '₹1.82 Lakh', type: 'Sports', image: 'https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=200&h=150&fit=crop' },
-    { id: 'ola-electric', name: 'Ola Electric S1 Pro', price: '₹1.30 Lakh', type: 'Electric', image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=200&h=150&fit=crop' },
-    { id: 'royal-enfield-classic', name: 'Royal Enfield Classic 350', price: '₹1.93 Lakh', type: 'Cruiser', image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=200&h=150&fit=crop' },
-    { id: 'honda-activa', name: 'Honda Activa 6G', price: '₹74,536', type: 'Scooter', image: 'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=200&h=150&fit=crop' },
-    { id: 'ktm-duke-390', name: 'KTM Duke 390', price: '₹3.02 Lakh', type: 'Sports', image: 'https://images.unsplash.com/photo-1591768575417-8a3dc8dc3a8f?w=200&h=150&fit=crop' },
-    { id: 'bajaj-dominar', name: 'Bajaj Dominar 400', price: '₹2.30 Lakh', type: 'Adventure', image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=200&h=150&fit=crop' },
-    { id: 'suzuki-gixxer', name: 'Suzuki Gixxer', price: '₹1.25 Lakh', type: 'Sports', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=150&fit=crop' },
-    { id: 'tvs-apache', name: 'TVS Apache RTR 160', price: '₹1.16 Lakh', type: 'Sports', image: 'https://images.unsplash.com/photo-1568772585286-f59e2f37daa5?w=200&h=150&fit=crop' },
-    { id: 'hero-splendor', name: 'Hero Splendor Plus', price: '₹67,000', type: 'Commuter', image: 'https://images.unsplash.com/photo-1558980663-3685c1d673c4?w=200&h=150&fit=crop' }
+    { id: 'yamaha-r15', name: 'Yamaha R15 V4', price: '₹1.82 Lakh', type: 'Sports', image: 'https://cdn.bikedekho.com/processedimages/yamaha/r15-v4/source/r15-v468bbb5ab2b458.jpg?imwidth=412&impolicy=resize' },
+    { id: 'ola-electric', name: 'Ola Electric S1 Pro', price: '₹1.30 Lakh', type: 'Electric', image: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/197219/s1-pro-left-side-view.jpeg?isig=0' },
+    { id: 'royal-enfield-classic', name: 'Royal Enfield Classic 350', price: '₹1.93 Lakh', type: 'Cruiser', image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/183389/classic-350-right-front-three-quarter-2.jpeg?isig=0&q=80' },
+    { id: 'honda-activa', name: 'Honda Activa 6G', price: '₹74,536', type: 'Scooter', image: 'https://imgd.aeplcdn.com/642x361/n/cw/ec/158667/honda-activa-6g-right-side-view1.jpeg?isig=0&q=75' },
+    { id: 'ktm-duke-390', name: 'KTM Duke 390', price: '₹3.02 Lakh', type: 'Sports', image: 'https://cdn.bikedekho.com/processedimages/ktm/2021-390-duke/source/2021-390-duke67d19c0d0c17b.jpg?imwidth=412&impolicy=resize' },
+    { id: 'bajaj-dominar', name: 'Bajaj Dominar 400', price: '₹2.30 Lakh', type: 'Adventure', image: 'https://kaydeeauto.in/cdn/shop/files/BajajDominar400BS6-1_9499c99b-1b35-4198-b481-edf62b727900.png?v=1709361373&width=1445' },
+    { id: 'suzuki-gixxer', name: 'Suzuki Gixxer', price: '₹1.25 Lakh', type: 'Sports', image: 'https://imgd.aeplcdn.com/664x374/n/bw/models/colors/suzuki-select-model-metallic-triton-blue-1671516782463.png?q=80' },
+    { id: 'tvs-apache', name: 'TVS Apache RTR 160', price: '₹1.16 Lakh', type: 'Sports', image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/tvs-apache-160-rm-drum-black-edition1732629216165.jpg?q=80' },
+    { id: 'hero-splendor', name: 'Hero Splendor Plus', price: '₹67,000', type: 'Commuter', image: 'https://imgd.aeplcdn.com/664x374/n/bw/models/colors/hero-select-model-blue-black-1706531445236.png?q=80' }
 ];
 
 // Open modal to select bike
@@ -544,5 +544,5 @@ if (startCompareBtn) {
     });
 }
 
-console.log('Bikeloo - Initialized successfully!');
+console.log('BikeLoo - Initialized successfully!');
 

@@ -46,6 +46,22 @@
     font-size: 0.85rem;
 }
 
+.reviews-filter .btn-secondary {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    background-color: var(--light-gray);
+    color: var(--dark);
+    border: 1px solid var(--border-color);
+}
+
+.reviews-filter .btn-secondary:hover {
+    background-color: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+}
+
 /* Reviews Content */
 .reviews-content {
     width: 100%;
@@ -164,7 +180,56 @@
 }
 
 .review-form h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.4rem;
+    color: var(--dark);
+}
+
+.form-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
     margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.form-actions .btn {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.form-actions .btn i {
+    font-size: 1.1rem;
+}
+
+.form-note {
+    background-color: #f0f9ff;
+    border-left: 3px solid var(--accent-red);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: var(--spacing-md);
+}
+
+.form-note p {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.form-note i {
+    color: var(--accent-red);
+    margin-top: 0.2rem;
 }
 
 .form-row {
@@ -191,6 +256,18 @@
     width: 100%;
 }
 
+/* Helpful button active state */
+.btn-helpful.helpful-active {
+    background-color: var(--accent-red);
+    color: var(--white);
+    border-color: var(--accent-red);
+}
+
+.btn-helpful.helpful-active:hover {
+    background-color: #e03028;
+    border-color: #e03028;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .reviews-container {
@@ -214,6 +291,11 @@
     
     .form-row {
         grid-template-columns: 1fr;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
     }
     
     .review-header-section {

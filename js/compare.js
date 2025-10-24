@@ -9,7 +9,7 @@ const bikesDatabase = {
         brand: 'Yamaha',
         type: 'Sports',
         price: '₹1.82 Lakh',
-        image: 'https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=400&h=250&fit=crop',
+        image: 'https://cdn.bikedekho.com/processedimages/yamaha/r15-v4/source/r15-v468bbb5ab2b458.jpg?imwidth=412&impolicy=resize',
         specs: {
             engine: '155cc',
             power: '18.4 bhp',
@@ -33,7 +33,7 @@ const bikesDatabase = {
         brand: 'KTM',
         type: 'Sports',
         price: '₹3.02 Lakh',
-        image: 'https://images.unsplash.com/photo-1591768575417-8a3dc8dc3a8f?w=400&h=250&fit=crop',
+        image: 'https://cdn.bikedekho.com/processedimages/ktm/2021-390-duke/source/2021-390-duke67d19c0d0c17b.jpg?imwidth=412&impolicy=resize',
         specs: {
             engine: '373cc',
             power: '43.5 bhp',
@@ -57,7 +57,7 @@ const bikesDatabase = {
         brand: 'Royal Enfield',
         type: 'Cruiser',
         price: '₹1.93 Lakh',
-        image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=400&h=250&fit=crop',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/183389/classic-350-right-front-three-quarter-2.jpeg?isig=0&q=80',
         specs: {
             engine: '349cc',
             power: '20.2 bhp',
@@ -81,7 +81,7 @@ const bikesDatabase = {
         brand: 'Honda',
         type: 'Scooter',
         price: '₹74,536',
-        image: 'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=400&h=250&fit=crop',
+        image: 'https://imgd.aeplcdn.com/642x361/n/cw/ec/158667/honda-activa-6g-right-side-view1.jpeg?isig=0&q=75',
         specs: {
             engine: '110cc',
             power: '7.68 bhp',
@@ -105,7 +105,7 @@ const bikesDatabase = {
         brand: 'Bajaj',
         type: 'Adventure',
         price: '₹2.30 Lakh',
-        image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=400&h=250&fit=crop',
+        image: 'https://kaydeeauto.in/cdn/shop/files/BajajDominar400BS6-1_9499c99b-1b35-4198-b481-edf62b727900.png?v=1709361373&width=1445',
         specs: {
             engine: '373cc',
             power: '40 bhp',
@@ -129,7 +129,7 @@ const bikesDatabase = {
         brand: 'Ola',
         type: 'Electric',
         price: '₹1.30 Lakh',
-        image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=400&h=250&fit=crop',
+        image: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/197219/s1-pro-left-side-view.jpeg?isig=0',
         specs: {
             engine: 'Electric Motor',
             power: '11 bhp',
@@ -292,7 +292,7 @@ function shareComparison() {
     
     if (navigator.share) {
         navigator.share({
-            title: 'Bike Comparison - Bikeloo',
+            title: 'Bike Comparison - BikeLoo',
             text: 'Check out this bike comparison!',
             url: url
         }).then(() => {

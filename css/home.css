@@ -723,7 +723,7 @@
     }
 }
 
-console.log('Bikeloo - Initialized successfully!');
+console.log('BikeLoo - Initialized successfully!');
 
 /* Top Brands Section */
 .top-brands {
@@ -753,11 +753,24 @@ console.log('Bikeloo - Initialized successfully!');
 }
 
 .brand-logo {
-    font-family: var(--font-primary);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--dark);
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.brand-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: var(--transition);
+}
+
+.brand-card:hover .brand-logo img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 .brand-card p {

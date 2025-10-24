@@ -9,7 +9,7 @@ const bikeName = urlParams.get('bike');
 if (bikeName) {
     console.log('Viewing bike:', decodeURIComponent(bikeName));
     // You can use this to load specific bike data
-    document.title = `${decodeURIComponent(bikeName)} - Bikeloo`;
+    document.title = `${decodeURIComponent(bikeName)} - BikeLoo`;
 }
 
 // Image Gallery
