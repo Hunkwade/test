@@ -51,14 +51,6 @@ function initializeEventListeners() {
         });
     });
     
-    // Mini category filters (hero section mobile)
-    document.querySelectorAll('.mini-category').forEach(card => {
-        card.addEventListener('click', () => {
-            const category = card.dataset.category;
-            filterByCategory(category);
-        });
-    });
-    
     // Brand cards
     document.querySelectorAll('.brand-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -526,22 +518,7 @@ function scrollToBikesSection() {
     bikesSection.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Mobile menu overlay close
-function closeMobileMenu() {
-    navMenu.classList.remove('active');
-}
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('active') && 
-        !navMenu.contains(e.target) && 
-        !menuToggle.contains(e.target)) {
-        closeMobileMenu();
-    }
-});
-
 // Make functions globally accessible
 window.toggleCompare = toggleCompare;
 window.openBikeDetails = openBikeDetails;
-window.closeMobileMenu = closeMobileMenu;
 
