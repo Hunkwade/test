@@ -1,0 +1,362 @@
+/* ============================================
+   Bike Details Page Styles
+   ============================================ */
+
+.bike-details {
+    background-color: var(--light-gray);
+}
+
+/* Bike Header */
+.bike-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+    background-color: var(--white);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-md);
+}
+
+.bike-title-section h1 {
+    margin: 0.5rem 0;
+}
+
+.bike-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.stars {
+    color: #ffa500;
+    font-size: 1rem;
+}
+
+.bike-rating span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.bike-price-section {
+    text-align: right;
+}
+
+.price-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.bike-price {
+    color: var(--accent-red);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Image Gallery */
+.image-gallery {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.main-image {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-images {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.thumbnail {
+    width: 120px;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    border-color: var(--accent-red);
+}
+
+/* Key Specs */
+.key-specs {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.key-specs h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: var(--spacing-sm);
+    background-color: var(--light-gray);
+    border-radius: 6px;
+}
+
+.spec-item i {
+    font-size: 1.8rem;
+    color: var(--accent-red);
+}
+
+.spec-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.spec-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* Detailed Specifications */
+.detailed-specs {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.detailed-specs h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.spec-table {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.spec-category h4 {
+    background-color: var(--light-gray);
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.spec-category table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.spec-category table tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.spec-category table tr:last-child {
+    border-bottom: none;
+}
+
+.spec-category table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.spec-category table td:first-child {
+    color: var(--text-secondary);
+    width: 40%;
+}
+
+.spec-category table td:last-child {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+/* Pros & Cons */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.pros,
+.cons {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+}
+
+.pros h3 {
+    color: #4caf50;
+    margin-bottom: var(--spacing-sm);
+}
+
+.cons h3 {
+    color: var(--accent-red);
+    margin-bottom: var(--spacing-sm);
+}
+
+.pros h3 i,
+.cons h3 i {
+    margin-right: 0.5rem;
+}
+
+.pros ul,
+.cons ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pros ul li,
+.cons ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.pros ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.cons ul li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+/* User Reviews */
+.user-reviews {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+}
+
+.user-reviews h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.review-card {
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: var(--spacing-md);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reviewer-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--accent-red);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.reviewer-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.review-rating {
+    color: #ffa500;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bike-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .bike-price-section {
+        text-align: left;
+    }
+    
+    .main-image {
+        height: 300px;
+    }
+    
+    .thumbnail-images {
+        overflow-x: auto;
+    }
+    
+    .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .thumbnail {
+        width: 100px;
+        height: 70px;
+    }
+}
+

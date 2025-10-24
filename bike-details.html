@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed specifications, price, and reviews of bikes on Bikeloo.">
+    <title>Bike Details - Bikeloo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/page-common.css">
+    <link rel="stylesheet" href="css/bike-details.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <i class="fas fa-motorcycle"></i>
+                Bike<span>loo</span>
+            </a>
+            
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bikes.html">Bikes</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bike Details Section -->
+    <section class="section bike-details">
+        <div class="container">
+            <!-- Bike Header -->
+            <div class="bike-header">
+                <div class="bike-title-section">
+                    <span class="badge badge-primary">Popular</span>
+                    <h1>Yamaha R15 V4</h1>
+                    <div class="bike-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (128 reviews)</span>
+                    </div>
+                </div>
+                
+                <div class="bike-price-section">
+                    <p class="price-label">Ex-Showroom Price</p>
+                    <h2 class="bike-price">₹1.82 Lakh</h2>
+                    <a href="compare.html" class="btn btn-primary">Compare</a>
+                </div>
+            </div>
+            
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+                <div class="main-image">
+                    <img src="https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=800&h=500&fit=crop" alt="Yamaha R15 V4" id="mainBikeImage">
+                </div>
+                <div class="thumbnail-images">
+                    <img src="https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=200&h=120&fit=crop" alt="View 1" class="thumbnail active">
+                    <img src="https://images.unsplash.com/photo-1568772585286-f59e2f37daa5?w=200&h=120&fit=crop" alt="View 2" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=120&fit=crop" alt="View 3" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1591768575417-8a3dc8dc3a8f?w=200&h=120&fit=crop" alt="View 4" class="thumbnail">
+                </div>
+            </div>
+            
+            <!-- Key Specs -->
+            <div class="key-specs">
+                <h3>Key Specifications</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <div>
+                            <p class="spec-label">Engine</p>
+                            <p class="spec-value">155cc</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <p class="spec-label">Power</p>
+                            <p class="spec-value">18.4 bhp</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-gas-pump"></i>
+                        <div>
+                            <p class="spec-label">Mileage</p>
+                            <p class="spec-value">40 km/l</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-cog"></i>
+                        <div>
+                            <p class="spec-label">Transmission</p>
+                            <p class="spec-value">6-Speed</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-weight"></i>
+                        <div>
+                            <p class="spec-label">Weight</p>
+                            <p class="spec-value">142 kg</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-flask"></i>
+                        <div>
+                            <p class="spec-label">Fuel Tank</p>
+                            <p class="spec-value">11 Liters</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Specifications -->
+            <div class="detailed-specs">
+                <h3>Detailed Specifications</h3>
+                
+                <div class="spec-table">
+                    <div class="spec-category">
+                        <h4>Engine & Transmission</h4>
+                        <table>
+                            <tr>
+                                <td>Engine Type</td>
+                                <td>Liquid Cooled, 4-Stroke, SOHC</td>
+                            </tr>
+                            <tr>
+                                <td>Displacement</td>
+                                <td>155cc</td>
+                            </tr>
+                            <tr>
+                                <td>Max Power</td>
+                                <td>18.4 bhp @ 10,000 rpm</td>
+                            </tr>
+                            <tr>
+                                <td>Max Torque</td>
+                                <td>14.2 Nm @ 7,500 rpm</td>
+                            </tr>
+                            <tr>
+                                <td>Transmission</td>
+                                <td>6-Speed Manual</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h4>Dimensions & Capacity</h4>
+                        <table>
+                            <tr>
+                                <td>Length</td>
+                                <td>1,990 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Width</td>
+                                <td>725 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Height</td>
+                                <td>1,135 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Wheelbase</td>
+                                <td>1,325 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Ground Clearance</td>
+                                <td>155 mm</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h4>Brakes & Suspension</h4>
+                        <table>
+                            <tr>
+                                <td>Front Brake</td>
+                                <td>282mm Disc, ABS</td>
+                            </tr>
+                            <tr>
+                                <td>Rear Brake</td>
+                                <td>220mm Disc, ABS</td>
+                            </tr>
+                            <tr>
+                                <td>Front Suspension</td>
+                                <td>Telescopic, 37mm</td>
+                            </tr>
+                            <tr>
+                                <td>Rear Suspension</td>
+                                <td>Mono-shock</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pros & Cons -->
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3><i class="fas fa-check-circle"></i> Pros</h3>
+                    <ul>
+                        <li>Sharp and aggressive styling</li>
+                        <li>Excellent handling and stability</li>
+                        <li>Smooth engine performance</li>
+                        <li>Advanced features like LED lights and digital console</li>
+                        <li>Good build quality</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h3><i class="fas fa-times-circle"></i> Cons</h3>
+                    <ul>
+                        <li>Slightly uncomfortable for long rides</li>
+                        <li>Higher price compared to competitors</li>
+                        <li>Limited storage space</li>
+                        <li>Rear seat could be more comfortable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- User Reviews -->
+            <div class="user-reviews">
+                <h3>User Reviews</h3>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">AK</div>
+                            <div>
+                                <h4>Amit Kumar</h4>
+                                <p class="review-date">Mumbai, India • 2 weeks ago</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Excellent bike with great performance! The handling is superb and the styling is very aggressive. Perfect for daily commute and weekend rides. Highly recommended!
+                    </p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">RS</div>
+                            <div>
+                                <h4>Rahul Sharma</h4>
+                                <p class="review-date">Delhi, India • 1 month ago</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Good bike overall. Performance is great but seat comfort could be better for long rides. Fuel efficiency is decent for a sports bike.
+                    </p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">VP</div>
+                            <div>
+                                <h4>Vikram Patel</h4>
+                                <p class="review-date">Bangalore, India • 2 months ago</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Love the design and build quality. The bike feels premium and performs excellently on highways. Minor issue with pillion comfort but otherwise a fantastic bike!
+                    </p>
+                </div>
+                
+                <div class="text-center mt-3">
+                    <a href="reviews.html" class="btn btn-secondary">View All Reviews</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Bikeloo</h3>
+                    <p>Your ultimate destination for bike information, comparisons, and reviews. Find the perfect bike for your needs.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="bikes.html">Browse Bikes</a></li>
+                        <li><a href="compare.html">Compare Bikes</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="news.html">Latest News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@bikeloo.com</p>
+                    <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bikeloo. All rights reserved. Made with <i class="fas fa-heart" style="color: #ff3b30;"></i> for bike enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/bike-details.js"></script>
+</body>
+</html>
+
