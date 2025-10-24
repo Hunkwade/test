@@ -1,0 +1,195 @@
+/* ============================================
+   Compare Page Styles
+   ============================================ */
+
+.compare-section {
+    background-color: var(--light-gray);
+}
+
+/* Bike Selector Grid */
+.bike-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.bike-selector {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+}
+
+.selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.selector-header h3 {
+    font-size: 1.1rem;
+}
+
+.btn-remove {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    color: var(--accent-red);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.btn-remove:hover {
+    background-color: var(--accent-red);
+    color: var(--white);
+}
+
+.bike-select {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+}
+
+.selected-bike {
+    text-align: center;
+}
+
+.selected-bike img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.selected-bike h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.selected-bike .price {
+    color: var(--accent-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Comparison Table */
+.comparison-table {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+}
+
+.comparison-table h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.compare-table thead tr.category-row {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.compare-table thead th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.compare-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.compare-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.compare-table td {
+    padding: 0.9rem 1rem;
+    text-align: center;
+}
+
+.compare-table td.spec-label {
+    text-align: left;
+    background-color: var(--light-gray);
+    font-weight: 500;
+    color: var(--text-primary);
+    width: 25%;
+}
+
+.compare-table td.highlight-better {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.compare-table tbody td {
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .bike-selector-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bike-selector:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .bike-selector-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bike-selector:nth-child(3) {
+        max-width: 100%;
+    }
+    
+    .compare-table {
+        font-size: 0.8rem;
+    }
+    
+    .compare-table td,
+    .compare-table th {
+        padding: 0.6rem 0.5rem;
+    }
+    
+    .compare-table td.spec-label {
+        width: 35%;
+    }
+}
+
+@media (max-width: 480px) {
+    .selected-bike img {
+        height: 140px;
+    }
+    
+    .compare-table {
+        font-size: 0.75rem;
+    }
+    
+    .compare-table td,
+    .compare-table th {
+        padding: 0.5rem 0.3rem;
+    }
+}
+

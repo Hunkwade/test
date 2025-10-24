@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare bikes side by side. View detailed specifications and price comparisons on Bikeloo.">
+    <title>Compare Bikes - Bikeloo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/compare.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <i class="fas fa-motorcycle"></i>
+                Bike<span>loo</span>
+            </a>
+            
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bikes.html">Bikes</a></li>
+                <li><a href="compare.html" class="active">Compare</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Compare Bikes</h1>
+            <p>Select up to 3 bikes to compare specifications, prices, and features</p>
+        </div>
+    </section>
+
+    <!-- Compare Section -->
+    <section class="section compare-section">
+        <div class="container">
+            <!-- Bike Selection -->
+            <div class="bike-selector-grid">
+                <div class="bike-selector">
+                    <div class="selector-header">
+                        <h3>Bike 1</h3>
+                        <button class="btn-remove" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <select class="bike-select" id="bike1Select">
+                        <option value="">Select Bike 1</option>
+                        <option value="yamaha-r15">Yamaha R15 V4</option>
+                        <option value="ktm-duke-390" selected>KTM Duke 390</option>
+                        <option value="royal-enfield-classic">Royal Enfield Classic 350</option>
+                        <option value="honda-activa">Honda Activa 6G</option>
+                        <option value="bajaj-dominar">Bajaj Dominar 400</option>
+                        <option value="ola-electric">Ola Electric S1 Pro</option>
+                    </select>
+                    <div class="selected-bike" id="selectedBike1">
+                        <img src="https://images.unsplash.com/photo-1591768575417-8a3dc8dc3a8f?w=400&h=250&fit=crop" alt="KTM Duke 390">
+                        <h4>KTM Duke 390</h4>
+                        <p class="price">₹3.02 Lakh</p>
+                    </div>
+                </div>
+                
+                <div class="bike-selector">
+                    <div class="selector-header">
+                        <h3>Bike 2</h3>
+                        <button class="btn-remove" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <select class="bike-select" id="bike2Select">
+                        <option value="">Select Bike 2</option>
+                        <option value="yamaha-r15" selected>Yamaha R15 V4</option>
+                        <option value="ktm-duke-390">KTM Duke 390</option>
+                        <option value="royal-enfield-classic">Royal Enfield Classic 350</option>
+                        <option value="honda-activa">Honda Activa 6G</option>
+                        <option value="bajaj-dominar">Bajaj Dominar 400</option>
+                        <option value="ola-electric">Ola Electric S1 Pro</option>
+                    </select>
+                    <div class="selected-bike" id="selectedBike2">
+                        <img src="https://images.unsplash.com/photo-1558981001-5864b9f7ff2e?w=400&h=250&fit=crop" alt="Yamaha R15 V4">
+                        <h4>Yamaha R15 V4</h4>
+                        <p class="price">₹1.82 Lakh</p>
+                    </div>
+                </div>
+                
+                <div class="bike-selector">
+                    <div class="selector-header">
+                        <h3>Bike 3</h3>
+                        <button class="btn-remove" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <select class="bike-select" id="bike3Select">
+                        <option value="">Select Bike 3</option>
+                        <option value="yamaha-r15">Yamaha R15 V4</option>
+                        <option value="ktm-duke-390">KTM Duke 390</option>
+                        <option value="royal-enfield-classic">Royal Enfield Classic 350</option>
+                        <option value="honda-activa">Honda Activa 6G</option>
+                        <option value="bajaj-dominar" selected>Bajaj Dominar 400</option>
+                        <option value="ola-electric">Ola Electric S1 Pro</option>
+                    </select>
+                    <div class="selected-bike" id="selectedBike3">
+                        <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=400&h=250&fit=crop" alt="Bajaj Dominar 400">
+                        <h4>Bajaj Dominar 400</h4>
+                        <p class="price">₹2.30 Lakh</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparison Table -->
+            <div class="comparison-table">
+                <h3>Detailed Comparison</h3>
+                
+                <div class="table-responsive">
+                    <table class="compare-table">
+                        <!-- Price & General -->
+                        <thead>
+                            <tr class="category-row">
+                                <th colspan="4">Price & General</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="spec-label">Price</td>
+                                <td>₹3.02 Lakh</td>
+                                <td class="highlight-better">₹1.82 Lakh</td>
+                                <td>₹2.30 Lakh</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Type</td>
+                                <td>Sports</td>
+                                <td>Sports</td>
+                                <td>Adventure</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Brand</td>
+                                <td>KTM</td>
+                                <td>Yamaha</td>
+                                <td>Bajaj</td>
+                            </tr>
+                        </tbody>
+                        
+                        <!-- Engine & Performance -->
+                        <thead>
+                            <tr class="category-row">
+                                <th colspan="4">Engine & Performance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="spec-label">Engine Capacity</td>
+                                <td class="highlight-better">373cc</td>
+                                <td>155cc</td>
+                                <td class="highlight-better">373cc</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Max Power</td>
+                                <td class="highlight-better">43.5 bhp</td>
+                                <td>18.4 bhp</td>
+                                <td>40 bhp</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Max Torque</td>
+                                <td class="highlight-better">37 Nm</td>
+                                <td>14.2 Nm</td>
+                                <td>35 Nm</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Transmission</td>
+                                <td>6-Speed</td>
+                                <td>6-Speed</td>
+                                <td>6-Speed</td>
+                            </tr>
+                        </tbody>
+                        
+                        <!-- Mileage & Fuel -->
+                        <thead>
+                            <tr class="category-row">
+                                <th colspan="4">Mileage & Fuel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="spec-label">Mileage</td>
+                                <td>30 km/l</td>
+                                <td class="highlight-better">40 km/l</td>
+                                <td>27 km/l</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Fuel Tank</td>
+                                <td>13.4 L</td>
+                                <td>11 L</td>
+                                <td class="highlight-better">13 L</td>
+                            </tr>
+                        </tbody>
+                        
+                        <!-- Dimensions & Weight -->
+                        <thead>
+                            <tr class="category-row">
+                                <th colspan="4">Dimensions & Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="spec-label">Kerb Weight</td>
+                                <td>172 kg</td>
+                                <td class="highlight-better">142 kg</td>
+                                <td>187 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Ground Clearance</td>
+                                <td>185 mm</td>
+                                <td>155 mm</td>
+                                <td class="highlight-better">173 mm</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Wheelbase</td>
+                                <td>1,357 mm</td>
+                                <td>1,325 mm</td>
+                                <td class="highlight-better">1,453 mm</td>
+                            </tr>
+                        </tbody>
+                        
+                        <!-- Brakes -->
+                        <thead>
+                            <tr class="category-row">
+                                <th colspan="4">Brakes & Suspension</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="spec-label">Front Brake</td>
+                                <td class="highlight-better">320mm Disc</td>
+                                <td>282mm Disc</td>
+                                <td>320mm Disc</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Rear Brake</td>
+                                <td>230mm Disc</td>
+                                <td>220mm Disc</td>
+                                <td class="highlight-better">230mm Disc</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">ABS</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                        </tbody>
+                        
+                        <!-- Features -->
+                        <thead>
+                            <tr class="category-row">
+                                <th colspan="4">Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="spec-label">Digital Console</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">LED Lights</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-label">Bluetooth</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Bikeloo</h3>
+                    <p>Your ultimate destination for bike information, comparisons, and reviews. Find the perfect bike for your needs.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="bikes.html">Browse Bikes</a></li>
+                        <li><a href="compare.html">Compare Bikes</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="news.html">Latest News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@bikeloo.com</p>
+                    <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bikeloo. All rights reserved. Made with <i class="fas fa-heart" style="color: #ff3b30;"></i> for bike enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+

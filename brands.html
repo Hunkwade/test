@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all bike brands on Bikeloo. Find top models from Honda, Yamaha, KTM, Royal Enfield and more.">
+    <title>Bike Brands - Bikeloo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/brands.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <i class="fas fa-motorcycle"></i>
+                Bike<span>loo</span>
+            </a>
+            
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bikes.html">Bikes</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="brands.html" class="active">Brands</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>All Bike Brands</h1>
+            <p>Explore bikes from top brands worldwide</p>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="section brands-section">
+        <div class="container">
+            <div class="brands-grid">
+                <!-- Brand Card 1 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">Honda</div>
+                        <span class="badge">25 Models</span>
+                    </div>
+                    <p class="brand-description">Leading Japanese manufacturer known for reliability and innovation</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>Honda Activa 6G</li>
+                            <li>Honda CB350</li>
+                            <li>Honda Dio</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 2 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">Yamaha</div>
+                        <span class="badge">18 Models</span>
+                    </div>
+                    <p class="brand-description">Premium sports bikes with cutting-edge technology</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>Yamaha R15 V4</li>
+                            <li>Yamaha MT-15</li>
+                            <li>Yamaha FZ-X</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 3 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">Royal Enfield</div>
+                        <span class="badge">12 Models</span>
+                    </div>
+                    <p class="brand-description">Classic cruisers with timeless design and character</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>Classic 350</li>
+                            <li>Meteor 350</li>
+                            <li>Himalayan</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 4 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">KTM</div>
+                        <span class="badge badge-primary">9 Models</span>
+                    </div>
+                    <p class="brand-description">High-performance sports bikes with Austrian engineering</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>KTM Duke 390</li>
+                            <li>KTM RC 390</li>
+                            <li>KTM Duke 250</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 5 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">Bajaj</div>
+                        <span class="badge">22 Models</span>
+                    </div>
+                    <p class="brand-description">Affordable and performance-oriented motorcycles</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>Bajaj Pulsar</li>
+                            <li>Bajaj Dominar 400</li>
+                            <li>Bajaj Platina</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 6 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">TVS</div>
+                        <span class="badge">20 Models</span>
+                    </div>
+                    <p class="brand-description">Innovative designs with great value for money</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>TVS Apache RTR 160</li>
+                            <li>TVS Ntorq 125</li>
+                            <li>TVS Jupiter</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 7 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">Hero</div>
+                        <span class="badge">28 Models</span>
+                    </div>
+                    <p class="brand-description">India's largest bike manufacturer with excellent mileage</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>Hero Splendor Plus</li>
+                            <li>Hero Xtreme 160R</li>
+                            <li>Hero Passion Pro</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 8 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">Suzuki</div>
+                        <span class="badge">15 Models</span>
+                    </div>
+                    <p class="brand-description">Reliable motorcycles with smooth performance</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>Suzuki Gixxer</li>
+                            <li>Suzuki Access 125</li>
+                            <li>Suzuki Avenis</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+                
+                <!-- Brand Card 9 -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo">Ola Electric</div>
+                        <span class="badge badge-primary">5 Models</span>
+                    </div>
+                    <p class="brand-description">Revolutionary electric scooters for sustainable mobility</p>
+                    <div class="brand-popular">
+                        <h4>Popular Models:</h4>
+                        <ul>
+                            <li>Ola S1 Pro</li>
+                            <li>Ola S1 Air</li>
+                            <li>Ola S1 X</li>
+                        </ul>
+                    </div>
+                    <a href="bikes.html" class="btn btn-secondary btn-sm">View All Models</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Bikeloo</h3>
+                    <p>Your ultimate destination for bike information, comparisons, and reviews. Find the perfect bike for your needs.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="bikes.html">Browse Bikes</a></li>
+                        <li><a href="compare.html">Compare Bikes</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="news.html">Latest News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@bikeloo.com</p>
+                    <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bikeloo. All rights reserved. Made with <i class="fas fa-heart" style="color: #ff3b30;"></i> for bike enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
